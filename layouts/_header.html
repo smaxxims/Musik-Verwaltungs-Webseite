@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musik-CD's</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/cd/public/css/style.css">
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/cd">Logo</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/cd">Home</a></li>
+            <li><a href="/cd/views/music-cds">Musik-CD's</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+            <?php session_start();
+                if(isset($_SESSION['user'])) :?>
+                <li><a href="/cd/views/login">Hi <?php if (isset($_SESSION["user"])) echo $_SESSION["user"]; ?> (ausloggen)</a></li>
+                <li><a href="/cd/views/admin/home">Admin Bereich</a></li>
+                <?php else : ?>
+                <li><a href="/cd/views/login">Log in</a></li>
+            <?php endif ?>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">

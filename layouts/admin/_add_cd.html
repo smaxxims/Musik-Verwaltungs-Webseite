@@ -1,0 +1,62 @@
+<h2 class="page-title">CD anlegen</h2>
+<a href="/cd/views/admin/cds.php" class="btn btn-primary">Zurück zu allen CD's</a>
+<br><br>
+
+<form action="<?= htmlentities($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Interpret</label>
+        <input type="text" class="form-control" name="interpret" placeholder="Interpret">
+    </div>
+    <div class="form-group ">
+        <label>Beschreibung</label>
+        <input type="text" class="form-control" name="desc" placeholder="Beschreibung">
+    </div>
+    <div class="form-group">
+        <label>Genre</label>
+        <input type="text" class="form-control" name="genre" placeholder="Genre">
+    </div>
+    <div class="form-group">
+        <label>Jahr</label>
+        <input type="number" class="form-control" name="year" placeholder="Jahr">
+    </div>
+    <div class="form-group">
+        <label>Cover</label>
+        <input type="file" accept="image/png, image/jpeg" class="form-control btn-info input-upload" name="image"
+            id="img">
+        <br>
+        <img src="#" id="imgPreview" alt="Vorschau-Bild">
+    </div>
+<!---->
+    <!---->
+    <input type="button" class="btn btn-success submit-add-cd" value="CD anlegen">
+    <div class="msb-box-data"></div>
+</form>
+
+
+<!--
+<form action="/admin/products/product-gallery/<%= id %>" method="post" enctype="multipart/form-data"
+      class="dropzone" id="dropzoneForm">
+    <div class="fallback">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </div>
+</form>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/basic.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.js"></script>
+
+<script>
+    // dropzone
+    Dropzone.options.dropzoneForm = {
+        acceptedFiles: "image/*",
+        init: function () {
+            this.on("queuecomplete", function (file) {
+                setTimeout(function () {
+                    location.reload()
+                }, 1000)
+            })
+        }
+    }
+</script>-->

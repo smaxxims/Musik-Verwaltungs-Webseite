@@ -1,0 +1,32 @@
+DirectoryIndex index.php
+
+# enable apache rewrite engine
+RewriteEngine on
+
+# set your rewrite base
+# Edit this in your init method too if you script lives in a subfolder
+RewriteBase /cd/
+
+# Deliver the folder or file directly if it exists on the server
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# removing extensions
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+#RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Push every request to index.php
+#RewriteRule ^(.*)$ index.php [QSA]
+
+php_value include_path "C:\xampp\htdocs\cd\controlers"
+php_value auto_prepend_file "Superglobal.php"
+
+# Zugriff für Ordner verweigern
+Options -Indexes
+#Options +MultiViews
+
+# Error weiterleiten
+ErrorDocument 403 http://localhost/cd
+ErrorDocument 404 http://localhost/cd
+
+
