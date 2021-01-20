@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 include "../../db/AjaxDB.php";
-include "../../models/cd.php";
+include "../../models/Cd.php";
 
 if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
     header("Location: ../home.php");

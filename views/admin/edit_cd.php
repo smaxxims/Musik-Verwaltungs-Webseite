@@ -1,7 +1,7 @@
 <?php
 include "../../layouts/admin/_admin_header.html";
 include "../../db/AjaxDB.php";
-include "../../models/cd.php";
+include "../../models/Cd.php";
 include "../../models/Title.php";
 
 if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {

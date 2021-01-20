@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../../models/cd.php";
+include "../../models/Cd.php";
 include "../../db/AjaxDB.php";
 
 if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {

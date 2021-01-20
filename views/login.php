@@ -1,6 +1,6 @@
 <?php
 include "../db/AjaxDB.php";
-include "../models/user.php";
+include "../models/User.php";
 include "../controlers/fun.php";
 
 session_start();
