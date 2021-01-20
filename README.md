@@ -11,8 +11,12 @@
 <br>
 <h3>Infos</h3>
 <ul>
-    <li><b>PHP</b> | <b>MySQL</b> | <b>AJAX</b> | <b>PHPUnit</b> | <b>OOP</b>  | <b>MVC</b>  | <b>Admin</b> | <b>Bootstrap CSS</b></li>
-    <h4>Log in</h4>
-    <li>Benutzername = admin</li>
-    <li>Passwort = admin</li>
+    <b>PHP</b> | <b>MySQL</b> | <b>AJAX</b> | <b>PHPUnit</b> | <b>OOP</b>  | <b>MVC</b>  | <b>Admin</b> | <b>Bootstrap CSS</b>
 </ul>
+<h3>Setup</h3>
+<p>In xampp htdocs ein Ordner Namens "cd" erstellen und gezippten Code dort entpacken.</p>
+<p>Datenbank kann aus Order "db" der Datei "music.sql" in mySQL importiert werden.</p>
+    <h4>Log in</h4>
+    <h5>Benutzername = admin</h5>
+    <h5>Passwort = admin</h5>
+<p>Fertig!</p>
