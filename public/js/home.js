@@ -5,6 +5,7 @@ const init = () => {
     getLoginByBtn('.login-nav-btn')
     getContactBy('.contact-nav-btn');
 }
+let a = 1
 
 // open and close menu and main-content 
 $('.hamburger-menu').click(function () {
