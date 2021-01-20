@@ -13,8 +13,7 @@
 <ul>
     <li>PHP | <b>MySQL</b> | <b>AJAX</b> | <b>PHPUnit</b> | <b>OOP</b>  | <b>MVC</b>  | <b>Admin</b> | <b>Bootstrap CSS</b></li>
     <br>
-    <li><b>Log in</b></li>
-    <br>
-    <li>Benutzername: admin</li>
-    <li>Passwort: admin</li>
+    <h4>Log in</h4>
+    <li>Benutzername = admin</li>
+    <li>Passwort = admin</li>
 </ul>
