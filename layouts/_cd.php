@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row scrollDesign">
     <h1 class="page-header">Musik-CD</h1>
     <div class="col-xs-12 col-md-5">
         <?php if (empty($row["image"])) : ?>

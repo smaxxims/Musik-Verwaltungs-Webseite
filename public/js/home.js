@@ -11,6 +11,7 @@ let a = 1
 $('.hamburger-menu').click(function () {
     $('.nav-wrapper').toggleClass('change')
     if ($('.bottom-nav').text() == '') {
+        console.log("test");
         getHomeContent()
     }
 })
@@ -56,7 +57,7 @@ const getHomeByBtn = btn => {
 
         $.ajax({
             type: "POST",
-            url: "test.php",
+            url: "home_content_nav.php",
             contentType: "application/json; charset=utf-8",
             dataType: "html",
             cache: false,
@@ -75,7 +76,7 @@ const getHomeByBtn = btn => {
 const getHomeContent = () => {
     $.ajax({
         type: "POST",
-        url: "test.php",
+        url: "home_content_nav.php",
         contentType: "application/json; charset=utf-8",
         dataType: "html",
         cache: false,
@@ -85,7 +86,6 @@ const getHomeContent = () => {
         },
         success: function (res) {
             $('.bottom-nav').html(res)
-            getCdsByBtn('.musik-cds-btn-home.php')
         }
     })
 }

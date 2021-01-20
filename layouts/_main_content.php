@@ -19,6 +19,6 @@
 
         <?php include "../layouts/_nav.html" ?>
         
-        <div class="bottom-nav"></div>
+        <div class="bottom-nav scrollDesign"></div>
     </div>
 </div>
