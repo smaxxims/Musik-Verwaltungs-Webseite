@@ -19,8 +19,8 @@ class Cd
 
     public function uploadImage($imageTmpName, $image) {
         if (!empty($image)) {
-            $path = "../../public/images/" . $image;
-            if (move_uploaded_file($imageTmpName, $path)) {
+            $pathToSave = "../../public/images/" . $image;
+            if (move_uploaded_file($imageTmpName, $pathToSave)) {
             } else {
                 echo "Upload fehlgeschlagen.";
             }

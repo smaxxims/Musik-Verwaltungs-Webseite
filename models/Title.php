@@ -26,12 +26,8 @@ class Title
             if ($this->error > 0) {
                 echo "Return Code: " . $this->error . "<br />";
             } else {
-                /*echo "Upload: " . $_FILES["audio"]["name"] . "<br />";
-                echo "Type: " . $_FILES["audio"]["type"] . "<br />";
-                echo "Size: " . ($_FILES["audio"]["size"] / 1024) . " Kb<br />";
-                echo "Temp file: " . $_FILES["audio"]["tmp_name"] . "<br />";*/
 
-                // Create directory if it does not exist
+// Create directory if it does not exist
                 if (!is_dir("../../public/audio/" . $rowCD . "/")) {
                     mkdir("../../public/audio/" . $rowCD . "/");
                 }
