@@ -6,7 +6,7 @@
             </a>
         </div>
         <div class="btn-wrapper">
-            <button class="banner-btn">CD`s => Starten()</button>
+            <button class="banner-btn">Play</button>
         </div>
     </div>
 
