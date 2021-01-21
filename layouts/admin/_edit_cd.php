@@ -39,21 +39,21 @@
         <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label>Interpret</label>
-                <input type="text" class="form-control" name="interpret" data-data="interpret" value="<?= $rowCD['interpret'] ?>" placeholder="Interpret">
+                <input type="text" class="form-control" name="interpret" data-data="interpret" value="<?= $rowCD['interpret'] ?>" placeholder="Interpret" required>
             </div>
             <div class="form-group ">
                 <label>Beschreibung</label>
-                <textarea type="text" class="form-control" name="desc" cols="30" rows="10" placeholder="Beschreibung">
+                <textarea type="text" class="form-control" name="desc" cols="30" rows="10" placeholder="Beschreibung" required>
                <?php echo $rowCD['desc']?> 
                 </textarea>
             </div>
             <div class="form-group">
                 <label>Genre</label>
-                <input type="text" class="form-control" name="genre" data-data="genre" value="<?= $rowCD['genre'] ?>" placeholder="Genre">
+                <input type="text" class="form-control" name="genre" data-data="genre" value="<?= $rowCD['genre'] ?>" placeholder="Genre" required>
             </div>
             <div class="form-group">
                 <label>Jahr</label>
-                <input name="year" type="number" data-data="year" min="1900" max="2021" step="1" class="form-control" value="<?= $rowCD['year'] ?>" placeholder="Jahr">
+                <input name="year" type="number" data-data="year" min="1900" max="2021" step="1" class="form-control" value="<?= $rowCD['year'] ?>" placeholder="Jahr" required>
             </div>
             <input type="button" class="btn btn-success submit-data" value="CD Daten aktuallisieren"></input>
         </form>

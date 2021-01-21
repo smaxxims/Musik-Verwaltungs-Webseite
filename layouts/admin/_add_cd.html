@@ -5,19 +5,19 @@
 <form action="<?= htmlentities($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label>Interpret</label>
-        <input type="text" class="form-control" name="interpret" placeholder="Interpret">
+        <input type="text" class="form-control" name="interpret" placeholder="Interpret" required>
     </div>
     <div class="form-group ">
         <label>Beschreibung</label>
-        <input type="text" class="form-control" name="desc" placeholder="Beschreibung">
+        <input type="text" class="form-control" name="desc" placeholder="Beschreibung" required>
     </div>
     <div class="form-group">
         <label>Genre</label>
-        <input type="text" class="form-control" name="genre" placeholder="Genre">
+        <input type="text" class="form-control" name="genre" placeholder="Genre" required>
     </div>
     <div class="form-group">
         <label>Jahr</label>
-        <input type="number" class="form-control" name="year" placeholder="Jahr">
+        <input type="number" class="form-control" name="year" placeholder="Jahr" required>
     </div>
     <div class="form-group">
         <label>Cover</label>
