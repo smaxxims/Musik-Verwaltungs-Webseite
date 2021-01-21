@@ -9,7 +9,6 @@
     <li>CD löschen oder Lieder einzelnt löschen</li>
     <li>Email senden</li>
 </ul>
-<br>
 <h3>Infos</h3>
 <ul>
     <b>PHP</b> | <b>MySQL</b> | <b>AJAX</b> | <b>PHPUnit</b> | <b>OOP</b>  | <b>MVC</b>  | <b>Admin</b> | <b>Bootstrap CSS</b>
