@@ -7,6 +7,7 @@
     <li>CD bearbeiten - Text - Bild - Audio</li>
     <li>Lieder hochladen, bearbeiten, abspielen</li>
     <li>CD löschen oder Lieder einzelnt löschen</li>
+    <li>Email senden</li>
 </ul>
 <br>
 <h3>Infos</h3>
