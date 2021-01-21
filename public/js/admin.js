@@ -69,10 +69,6 @@ function updateCdImage(btn) {
             success: function (res) {
                 $('.msb-box-image').html(res)
 
-            },
-            complete: function () {
-                //const reloadPanel = () => $(".cover-panel").load(location.href + ".cover-panel")
-                //setTimeout(reloadPanel, 2000)
             }
         })
     })
@@ -85,16 +81,13 @@ function updateCdAudio(btn) {
 
     $('input[name=audio]').on('change', function (event) {
 
-        // push files to fileList
         for (var i = 0; i < this.files.length; i++) {
             fileList.push(this.files[i]);
         }
         console.log(fileList);
-
         // file size show
 
         //
-
         let size = 0
         for (let i = 0; i < fileList.length; i++) {
              size = size + fileList[i].size 
@@ -109,15 +102,6 @@ function updateCdAudio(btn) {
         const queryString = window.location.search
         const urlParams = new URLSearchParams(queryString)
         const id = urlParams.get('id')
-
-        /*let audios = []
-        $('input[name=audio]').each(function () {
-             audios.push($('input[name=audio]')[0].files[0])
-            console.log(audios)
-            console.log($('input[name=audio]'))
-            formData.append('audio', $('input[name=audio]')[0].files[0])
-            formData.append('id', id)
-        })*/
 
         var data = new FormData();
         fileList.forEach(function (file, i) {

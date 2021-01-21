@@ -3,9 +3,9 @@ const init = () => {
     getCdsByBtn('.musik-cds-nav-btn')
     getHomeByBtn('.home-nav-btn')
     getLoginByBtn('.login-nav-btn')
-    getContactBy('.contact-nav-btn');
+    getContactBy('.contact-nav-btn')
+    getCdByIdByBtn('.musik-cd-btn')
 }
-let a = 1
 
 // open and close menu and main-content 
 $('.hamburger-menu').click(function () {
@@ -94,11 +94,10 @@ const getHomeContent = () => {
 const getContactBy = btn => {
 
     $(btn).mousedown(function (event) {
-        console.log("Handler for event called.")
+
         $.ajax({
             type: "POST",
             url: "contact.php",
-            //contentType: "application/json; charset=utf-8",
             dataType: "html",
             cache: false,
 
@@ -121,7 +120,7 @@ const getContactBy = btn => {
 const getLoginByBtn = btn => {
 
     $(btn).mousedown(function (event) {
-        console.log("Handler for .submit() called.")
+
         $.ajax({
             type: "POST",
             url: "login.php",
@@ -144,33 +143,22 @@ const getLoginByBtn = btn => {
 // post Login
 const postLoginByBtn = btn => {
     $(btn).mousedown(function (event) {
-        console.log("Handler for .submit() called.")
+
         let formData = {
             'username': $('input[name=username]').val(),
             'password': $('input[name=password]').val(),
         };
 
-        /*var meAsJqueryObj = $(this)
-        if (meAsJqueryObj.data('requestRunning')) {
-            return
-        }
-        meAsJqueryObj.data('requestRunning', true)
-        console.log(meAsJqueryObj)*/
-
         $.ajax({
             type: "POST",
             url: "login.php",
-            //contentType: "application/json; charset=utf-8",
             data: formData,
-            //dataType: "json",
-            //encode: true,
             cache: false,
 
             error: function (e) {
                 console.log(e);
             },
             success: function (res) {
-                console.log(res);
                 if (res.includes("Eingeloggt")) {
                     const newTab = () => window.open('admin/home', '_blank')
                     setTimeout(newTab, 3000)
@@ -178,22 +166,17 @@ const postLoginByBtn = btn => {
                     const reloadPage = () => location.reload()
                     setTimeout(reloadPage, 3000)
 
-                    //$(location).attr('href', "admin/cds.php")
                 }
                 $('.msb-box').html(res)
             },
-            complete: function () {
-                //meAsJqueryObj.data('requestRunning', false)
-                
 
-            }
         })
     })
 }
 
 
 const getCdByIdByBtn = btn => {
-    $('.musik-cd-btn').mousedown(function (event) {
+    $(btn).mousedown(function (event) {
 
         var dataId = $(this).attr("data-id")
 

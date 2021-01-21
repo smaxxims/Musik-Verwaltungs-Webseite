@@ -15,5 +15,3 @@ Options -Indexes
 # Error weiterleiten
 ErrorDocument 403 http://localhost/cd
 ErrorDocument 404 http://localhost/cd
-
-

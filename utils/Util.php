@@ -1,11 +1,13 @@
 <?php
 
-
 class Util
 {
-    private $prop;
-
-    public function myFun () {
-
+    public function makeRandomNumsInStringOfNum(int $num): string
+    {
+        $string = "";
+        for ($i = 0; $i < $num; $i++) {
+            $string = $string.random_int(0, 9);
+        }
+        return $string;
     }
 }

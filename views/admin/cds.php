@@ -4,18 +4,23 @@ include "../../db/AjaxDB.php";
 include "../../models/Title.php";
 
 
-if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') :
+if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
     header("Location: ../home.php");
+}
 
-elseif (isset($_SESSION['user']) && $_SESSION['user'] == 'admin') :
+    $db = new AjaxDB();
+    $row = $db->getCodeByUsername(htmlspecialchars(stripslashes(trim($_SESSION["user"]))));
 
-    $ajaxDB = new AjaxDB();
-    $rows = $ajaxDB->getCDs();
+    if (password_verify( $row["code"], $_SESSION['code'])) {
 
-    $titelOfCd = new Title();
+        $ajaxDB = new AjaxDB();
+        $rows = $ajaxDB->getCDs();
 
-    include "../../layouts/admin/_cds.php";
-endif;
+        $titelOfCd = new Title();
+        include "../../layouts/admin/_cds.php";
+        include "../../layouts/admin/_admin_footer.html";
+    } else {
+        echo "Sie sind nicht als Admin eingeloggt!";
+    }
 
-include "../../layouts/admin/_admin_footer.html";
 ?>

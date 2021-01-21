@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server Version:               10.4.11-MariaDB - mariadb.org binary distribution
+-- Server Version:               10.4.17-MariaDB - mariadb.org binary distribution
 -- Server Betriebssystem:        Win64
 -- HeidiSQL Version:             11.1.0.6116
 -- --------------------------------------------------------
@@ -43,13 +43,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `admin` int(10) unsigned NOT NULL,
+  `code` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- Exportiere Daten aus Tabelle music.user: ~0 rows (ungefähr)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` (`id`, `name`, `password`, `admin`) VALUES
-	(1, 'admin', '$2y$10$jfuKBel7.jSANERy6At5qOsch2o5RT7I.G3uYLVidx8yWRQHmSrZy', 1);
+INSERT INTO `user` (`id`, `name`, `password`, `admin`, `code`) VALUES
+	(1, 'admin', '$2y$10$jfuKBel7.jSANERy6At5qOsch2o5RT7I.G3uYLVidx8yWRQHmSrZy', 1, '5709609');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
