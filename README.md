@@ -19,4 +19,3 @@
     <h4>Log in</h4>
     <h5>Benutzername = admin</h5>
     <h5>Passwort = admin</h5>
-<p>Fertig!</p>
