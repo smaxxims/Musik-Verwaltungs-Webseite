@@ -1,5 +1,5 @@
 <?php
-include "../../layouts/admin/_admin_header.html";
+include "../layouts/admin/_admin_header.html";
 include "../../controller/db_controller/MusicDB.php";
 include "../../controller/admin/ControllerAdmin.php";
 
@@ -17,8 +17,8 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
         $rows = $ajaxDB->getCDs();
 
         $titelOfCd = new ControllerAdmin();
-        include "../../layouts/admin/_cds.php";
-        include "../../layouts/admin/_admin_footer.html";
+        include "../layouts/admin/_cds.php";
+        include "../layouts/admin/_admin_footer.html";
     } else {
         echo "Sie sind nicht als Admin eingeloggt!";
     }

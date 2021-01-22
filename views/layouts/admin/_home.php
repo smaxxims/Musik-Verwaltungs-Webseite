@@ -11,4 +11,4 @@
 <ul>
     <b>PHP | </b><b>MySQL | </b><b>AJAX | </b><b>PHPUnit | </b><b>OOP | </b><b>MVC | </b><b>Admin | </b><b>Bootstrap CSS</b>
 </ul>
-<a href="../../views/admin/cds.php" class="btn btn-primary musik-cds-btn-home">Zu allen Musik-CD's</a>
+<a href="../admin/cds.php" class="btn btn-primary musik-cds-btn-home">Zu allen Musik-CD's</a>

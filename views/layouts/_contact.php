@@ -1,6 +1,6 @@
 <div class="container2">
     <h1>Kontakt</h1><br>
-    <form action="../views/contact.php" method="post">
+    <form action="../contact.php" method="post">
         <div class="form-group">
             <label>Name</label>
             <input type="text" name="name" class="form-control" placeholder="Name" required>

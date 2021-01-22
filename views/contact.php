@@ -55,6 +55,6 @@ if (filter_has_var(INPUT_POST, 'submit')) {
     }
 }
 
-include "../layouts/_contact.php";
+include "layouts/_contact.php";
 
 ?>

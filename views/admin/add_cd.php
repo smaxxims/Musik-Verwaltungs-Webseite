@@ -1,6 +1,6 @@
 
 <?php
-include "../../layouts/admin/_admin_header.html";
+include "../layouts/admin/_admin_header.html";
 include "../../controller/db_controller/MusicDB.php";
 include "../../models/Cd.php";
 
@@ -9,8 +9,8 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
 }
 
 
-include "../../layouts/admin/_add_cd.html";
-include "../../layouts/admin/_admin_footer.html";
+include "../layouts/admin/_add_cd.html";
+include "../layouts/admin/_admin_footer.html";
 ?>
 
 <script>

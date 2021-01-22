@@ -36,6 +36,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) :
     endif;
 
 else :
-    include "../layouts/_login.html";
+    include "layouts/_login.html";
 endif;
 ?>

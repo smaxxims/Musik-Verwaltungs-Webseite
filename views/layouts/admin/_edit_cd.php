@@ -11,7 +11,7 @@
             <div class="form-group ">
                 <p>
                     <?php if (empty($rowCD["image"])) : ?>
-                        <img src="../../public/images/noimage.jpg" class="cd-image">
+                        <img src="../../../public/images/noimage.jpg" class="cd-image">
                     <?php else : ?>
                         <img src="../../public/images/<?= $rowCD['image'] ?>" class="cd-image">
                     <?php endif; ?>

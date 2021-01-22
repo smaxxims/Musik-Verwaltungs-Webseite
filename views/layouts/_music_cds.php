@@ -8,7 +8,7 @@
         <div class="col-xs-12 col-md-4 p cd icon-item">
             <a data-id='<?= $cd['id']; ?>' class="pa musik-cd-btn icon-link">
                 <?php if (empty($cd["image"])) : ?>
-                    <img src="../public/images/noimage.jpg" class="pimage">
+                    <img src="../../public/images/noimage.jpg" class="pimage">
                 <?php else : ?>
                     <img src="../public/images/<?= $cd["image"] ?>" class="pimage">
                 <?php endif; ?>

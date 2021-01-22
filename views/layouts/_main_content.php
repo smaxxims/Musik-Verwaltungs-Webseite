@@ -17,7 +17,7 @@
             <div class="line line-3"></div>
         </div>
 
-        <?php include "../layouts/_nav.html" ?>
+        <?php include "layouts/_nav.html" ?>
         
         <div class="bottom-nav scrollDesign"></div>
     </div>

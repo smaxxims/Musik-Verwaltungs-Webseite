@@ -1,5 +1,5 @@
 <?php
-include "../../layouts/admin/_admin_header.html";
+include "../layouts/admin/_admin_header.html";
 include "../../controller/db_controller/MusicDB.php";
 include "../../models/Cd.php";
 include "../../controller/admin/ControllerAdmin.php";
@@ -21,10 +21,10 @@ if (isset($_GET['id'])) :
     $music = $getTitles->getFilesInDir("../../public/audio/".$id);
 
     if ($rowCD["id"] == $id) :
-        include "../../layouts/admin/_edit_cd.php";
+        include "../layouts/admin/_edit_cd.php";
     endif;
 endif;
-include "../../layouts/admin/_admin_footer.html";
+include "../layouts/admin/_admin_footer.html";
 ?>
 
 <script>

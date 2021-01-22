@@ -28,7 +28,7 @@
         <td><?= $row[3] ?></td>
         <td>
             <?php if (empty($row[4])) : ?>
-            <img src="../../public/images/noimage.jpg" class="cds-image">
+            <img src="../../../public/images/noimage.jpg" class="cds-image">
             <?php else : ?>
             <img src="../../public/images/<?= $row[4] ?>" class="cds-image">
             <?php endif; ?>

@@ -2,7 +2,7 @@
     <h1 class="page-header">Musik-CD</h1>
     <div class="col-xs-12 col-md-5">
         <?php if (empty($row["image"])) : ?>
-            <img src="../public/images/noimage.jpg" class="cd-image">
+            <img src="../../public/images/noimage.jpg" class="cd-image">
         <?php else : ?>
             <img src="../public/images/<?= $row["image"] ?>" class="cd-image">
         <?php endif; ?>

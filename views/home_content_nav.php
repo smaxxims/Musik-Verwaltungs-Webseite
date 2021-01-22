@@ -1,5 +1,5 @@
 <?php
 
-include "../layouts/_home.html";
+include "layouts/_home.html";
 
 ?>
