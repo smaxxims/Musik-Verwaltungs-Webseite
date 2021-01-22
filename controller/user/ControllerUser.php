@@ -1,7 +1,8 @@
 <?php
 
-class Controller {
 
+class ControllerUser
+{
     public function getFilesInDir($directory)
     {
         if (is_dir($directory)) {
@@ -19,17 +20,4 @@ class Controller {
             return [];
         }
     }
-
-    public function deleteAudioDirAndFilesIn($dir)
-    {
-        if (!scandir($dir)) return;
-
-        $files = array_diff(scandir($dir), array('.', '..'));
-        foreach ($files as $file) {
-            (is_dir("$dir/$file")) ? $this->deleteAudioDirAndFilesIn("$dir/$file") : unlink("$dir/$file");
-        }
-        return rmdir($dir);
-    }
 }
-
-?>

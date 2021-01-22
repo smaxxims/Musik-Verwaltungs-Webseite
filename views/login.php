@@ -1,5 +1,5 @@
 <?php
-include "../db/AjaxDB.php";
+include "../controller/db_controller/MusicDB.php";
 include "../models/User.php";
 include "../utils/Util.php";
 
@@ -8,7 +8,7 @@ session_unset();
 if (isset($_POST['username']) && isset($_POST['password'])) :
 
     $user = new User($_POST["username"], $_POST["password"]);
-    $ajaxDB = new AjaxDB();
+    $ajaxDB = new MusicDB();
 
     if (empty($user->getUsername()) || empty($user->getPassword())) :
         echo "<div class='alert alert-danger' role='alert'>Bitte alle Felder ausfüllen.</div>";

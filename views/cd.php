@@ -1,15 +1,15 @@
 <?php
-include "../db/AjaxDB.php";
-include "../controller/Controller.php";
+include "../controller/db_controller/MusicDB.php";
+include "../controller/user/ControllerUser.php";
 
 if (isset($_GET['id'])) :
 
     $id = $_GET['id'];
-    $ajaxDB = new AjaxDB();
+    $ajaxDB = new MusicDB();
     $row = $ajaxDB->getCdbyID($id);
 
     //include "audio.php";
-    $title = new Controller();
+    $title = new ControllerUser();
     $music = $title->getFilesInDir("../public/audio/".$id);
 
     if ($row["id"] == $id) :

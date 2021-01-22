@@ -1,6 +1,6 @@
 <?php
-include "../../db/AjaxDB.php";
-include "../../controller/Controller.php";
+include "../../controller/db_controller/MusicDB.php";
+include "../../controller/admin/ControllerAdmin.php";
 
 session_start();
 
@@ -9,10 +9,10 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == 'admin') :
     $id = $_GET['id'];
     $image = $_GET['image'];
 
-    $ajaxDB = new AjaxDB();
+    $ajaxDB = new MusicDB();
     $ajaxDB->deleteCD($id);
 
-    $ajaxDB = new AjaxDB();
+    $ajaxDB = new MusicDB();
     $row = $ajaxDB->getCdbyID($id);
 
     // delete image
@@ -26,7 +26,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == 'admin') :
     endif;
 
     // delete audio
-    $delTitle = new Controller();
+    $delTitle = new ControllerAdmin();
     $delTitle->deleteAudioDirAndFilesIn("../../public/audio/".$id);
 
 endif;

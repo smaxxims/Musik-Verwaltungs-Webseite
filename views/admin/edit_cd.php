@@ -1,8 +1,8 @@
 <?php
 include "../../layouts/admin/_admin_header.html";
-include "../../db/AjaxDB.php";
+include "../../controller/db_controller/MusicDB.php";
 include "../../models/Cd.php";
-include "../../controller/Controller.php";
+include "../../controller/admin/ControllerAdmin.php";
 
 
 if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
@@ -13,11 +13,11 @@ if (isset($_GET['id'])) :
     $id = $_GET['id'];
 
 // get cd data and image by id from db
-    $ajaxDB = new AjaxDB();
+    $ajaxDB = new MusicDB();
     $rowCD = $ajaxDB->getCdbyID($id);
 
 // get audio from dir
-    $getTitles = new Controller();
+    $getTitles = new ControllerAdmin();
     $music = $getTitles->getFilesInDir("../../public/audio/".$id);
 
     if ($rowCD["id"] == $id) :

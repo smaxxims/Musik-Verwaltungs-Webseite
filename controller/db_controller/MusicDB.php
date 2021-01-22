@@ -1,7 +1,7 @@
 <?php
 include "ConnectMySQL.php";
 
-class AjaxDB extends ConnectMySQL {
+class MusicDB extends ConnectMySQL {
 
     private $TABLE_CDS = 'cds';
     private $TABLE_USER = 'user';

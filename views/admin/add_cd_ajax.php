@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../../db/AjaxDB.php";
+include "../../controller/db_controller/MusicDB.php";
 include "../../models/Cd.php";
 
 if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
@@ -15,7 +15,7 @@ if (!$_POST["interpret"] || !$_POST["genre"] || !$_POST["year"] || !$_POST["desc
     $cd = new Cd($_POST["interpret"], $_POST["genre"], $_POST["year"], $_FILES["image"]["name"], $_POST["desc"]);
     $cd->uploadImage($_FILES['image']['tmp_name'], $cd->getImage());
 
-    $ajaxDB = new AjaxDB();
+    $ajaxDB = new MusicDB();
     $ajaxDB->saveCdinDB($cd->getInterpret(), $cd->getGenre(), $cd->getYear(), $cd->getImage(), $cd->getDesc());
 
     echo "<div class='alert alert-success' role='alert'>CD gespeichert.</div>";
