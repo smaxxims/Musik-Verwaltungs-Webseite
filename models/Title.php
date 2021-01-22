@@ -49,8 +49,10 @@ class Title
 
     public function getUploadedFiles($directory)
     {
-        if (is_dir($directory)) :
+        if (is_dir($directory)) {
             $folder = opendir($directory);
+            $file_array = [];
+
             while ($file = readdir($folder)) {
 
                 if ($file !== '.' && $file !== '..') {
@@ -59,10 +61,11 @@ class Title
                     $file_array[] = array("filename" => $file);
                 }
             }
+
             return $file_array; // check if empty before return
-        else :
+        } else {
             return [];
-        endif;
+        }
     }
 
     public function delTree($dir)

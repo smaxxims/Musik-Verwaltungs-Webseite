@@ -103,6 +103,8 @@
                                 </tr>
                         <?php
                             endwhile;
+                        else :
+                            echo "<div class='alert alert-info' role='alert'>Keine Titel für \"" . $rowCD['interpret'] . "\" gespeichert.</div>";
                         endif;
                         ?>
                     </tbody>
