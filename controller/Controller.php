@@ -2,7 +2,7 @@
 
 class Controller {
 
-    public function getUploadedFiles($directory)
+    public function getFilesInDir($directory)
     {
         if (is_dir($directory)) {
             $folder = opendir($directory);
