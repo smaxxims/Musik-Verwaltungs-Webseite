@@ -1,7 +1,7 @@
 <?php
 include "../../layouts/admin/_admin_header.html";
 include "../../db/AjaxDB.php";
-include "../../models/Title.php";
+include "../../controller/Controller.php";
 
 
 if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
@@ -16,7 +16,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
         $ajaxDB = new AjaxDB();
         $rows = $ajaxDB->getCDs();
 
-        $titelOfCd = new Title();
+        $titelOfCd = new Controller();
         include "../../layouts/admin/_cds.php";
         include "../../layouts/admin/_admin_footer.html";
     } else {

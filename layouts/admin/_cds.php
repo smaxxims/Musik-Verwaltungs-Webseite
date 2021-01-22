@@ -34,7 +34,7 @@
             <?php endif; ?>
         </td>
 <?php
-        $music = $titelOfCd->getUploadedFiles("../../public/audio/".$row[0]);
+        $music = $titelOfCd->getFilesInDir("../../public/audio/".$row[0]);
 ?>
         <td><?= count($music) ?></td>
 
