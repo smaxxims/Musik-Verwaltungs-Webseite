@@ -14,6 +14,6 @@
             <textarea name="message" cols="30" rows="10" class="form-control" placeholder="Nachricht" required></textarea>
         </div>
         <br>
-        <button type="submit" name="submit" class="btn btn-primary">Senden</button>
+        <button disabled name="submit" class="btn btn-primary">Senden</button>
     </form>
 </div>

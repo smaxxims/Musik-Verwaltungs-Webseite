@@ -18,9 +18,9 @@ class Title
         $this->tmpName = $tmpName;
     }
 
-    public function uploadTitle($rowCD)
+    public function uploadTitle($cdId)
     {
-        /* upload Audio */
+
         if ($this->titleName && $this->titleType == $this->allowType) {
 
             if ($this->error > 0) {
@@ -28,11 +28,11 @@ class Title
             } else {
 
 // Create directory if it does not exist
-                if (!is_dir("../../public/audio/" . $rowCD . "/")) {
-                    mkdir("../../public/audio/" . $rowCD . "/");
+                if (!is_dir("../../public/audio/" . $cdId . "/")) {
+                    mkdir("../../public/audio/" . $cdId . "/");
                 }
 // Move the uploaded file
-                $uploadDir = "../../public/audio/" . $rowCD . "/" . basename($this->titleName);
+                $uploadDir = "../../public/audio/" . $cdId . "/" . basename($this->titleName);
                 if (move_uploaded_file($this->tmpName, $uploadDir)) {
                 } else {
                     echo "<div class='alert alert-danger' role='alert'>Upload fehlgeschlagen</div>";
@@ -47,46 +47,6 @@ class Title
         }
     }
 
-    public function getUploadedFiles($directory)
-    {
-        if (is_dir($directory)) {
-            $folder = opendir($directory);
-            $file_array = [];
-
-            while ($file = readdir($folder)) {
-
-                if ($file !== '.' && $file !== '..') {
-                    $filename = $directory . '/' . $file;
-                    //$file_array = array($filename);
-                    $file_array[] = array("filename" => $file);
-                }
-            }
-
-            return $file_array; // check if empty before return
-        } else {
-            return [];
-        }
-    }
-
-    public function delTree($dir)
-    {
-        $files = array_diff(scandir($dir), array('.', '..'));
-        foreach ($files as $file) {
-            (is_dir("$dir/$file")) ? delTree("$dir/$file") : unlink("$dir/$file");
-        }
-        return rmdir($dir);
-    }
-
-
-    public function getTitleName()
-    {
-        return $this->titleName;
-    }
-
-    public function getTitleLength()
-    {
-        return $this->titleLength;
-    }
 }
 
 ?>

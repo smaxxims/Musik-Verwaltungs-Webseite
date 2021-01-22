@@ -14,7 +14,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) :
         echo "<div class='alert alert-danger' role='alert'>Bitte alle Felder ausfüllen.</div>";
     else :
 
-        $row = $ajaxDB->getUserPasswordByUsername($user->getUsername());
+        $row = $ajaxDB->getUserByUsername($user->getUsername());
 
         if (!$row) :
             echo "<div class='alert alert-danger' role='alert'>Benutzername existiert nicht.</div>";

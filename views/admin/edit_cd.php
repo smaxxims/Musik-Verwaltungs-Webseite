@@ -2,7 +2,8 @@
 include "../../layouts/admin/_admin_header.html";
 include "../../db/AjaxDB.php";
 include "../../models/Cd.php";
-include "../../models/Title.php";
+include "../../controller/Controller.php";
+
 
 if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
     header("Location: ../home.php");
@@ -16,8 +17,8 @@ if (isset($_GET['id'])) :
     $rowCD = $ajaxDB->getCdbyID($id);
 
 // get audio from dir
-    $getTitles = new Title();
-    $music = $getTitles->getUploadedFiles("../../public/audio/".$id);
+    $getTitles = new Controller();
+    $music = $getTitles->getFilesInDir("../../public/audio/".$id);
 
     if ($rowCD["id"] == $id) :
         include "../../layouts/admin/_edit_cd.php";

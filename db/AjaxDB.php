@@ -3,10 +3,14 @@ include "ConnectMySQL.php";
 
 class AjaxDB extends ConnectMySQL {
 
-    public function getCodeByUsername($username)
+    private $TABLE_CDS = 'cds';
+    private $TABLE_USER = 'user';
+
+    // table user
+    public function getUserByUsername($username)
     {
         $conn = $this->connectToDB();
-        $sql = $conn->prepare("SELECT * FROM `music`.`user` WHERE `name`='$username' LIMIT 1000");
+        $sql = $conn->prepare("SELECT * FROM `$this->DB_DATABASE`.`$this->TABLE_USER` WHERE `name`='$username' LIMIT 1000");
         $sql->execute();
         $result = $sql;
 
@@ -22,7 +26,7 @@ class AjaxDB extends ConnectMySQL {
     {
         $conn = $this->connectToDB();
 
-        $sql = $conn->prepare("UPDATE `music`.`user` SET `code`='$code' WHERE `name`='$username' LIMIT 1000");
+        $sql = $conn->prepare("UPDATE `$this->DB_DATABASE`.`$this->TABLE_USER` SET `code`='$code' WHERE `name`='$username' LIMIT 1000");
         $sql->execute();
         $result = $sql;
 
@@ -32,25 +36,11 @@ class AjaxDB extends ConnectMySQL {
         }
     }
 
-    public function getUserPasswordByUsername($username)
-    {
-        $conn = $this->connectToDB();
-        $sql = $conn->prepare("SELECT * FROM `music`.`user` WHERE `name`='$username' LIMIT 1000");
-        $sql->execute();
-        $result = $sql;
-
-        if (!$result) {
-            echo "Error: " . $sql . "======";
-            print_r($conn->errorInfo());
-        }
-        $row = $result->fetch(PDO::FETCH_ASSOC);
-        return $row;
-    }
-
+    // table cds
     public function saveCdinDB($interpret, $genre, $year, $image, $desc)
     {
         $conn = $this->connectToDB();
-        $sql = $conn->prepare("INSERT INTO `music`.`cds` (`interpret`, `genre`, `year`, `image`, `desc`) VALUES ('$interpret', '$genre', $year, '$image', '$desc') LIMIT 1000");
+        $sql = $conn->prepare("INSERT INTO `$this->DB_DATABASE`.`$this->TABLE_CDS` (`interpret`, `genre`, `year`, `image`, `desc`) VALUES ('$interpret', '$genre', $year, '$image', '$desc') LIMIT 1000");
         $sql->execute();
         $result = $sql;
 
@@ -63,7 +53,7 @@ class AjaxDB extends ConnectMySQL {
     public function getCDs() 
     {
         $conn = $this->connectToDB();
-        $sql = $conn->prepare("SELECT * FROM `music`.`cds` LIMIT 1000");
+        $sql = $conn->prepare("SELECT * FROM `$this->DB_DATABASE`.`$this->TABLE_CDS` LIMIT 1000");
         $sql->execute();
         $result = $sql;
 
@@ -78,7 +68,7 @@ class AjaxDB extends ConnectMySQL {
     public function updateImage($id, $image)
     {
         $conn = $this->connectToDB();
-        $sql = $conn->prepare("UPDATE `music`.`cds` SET `image`='$image' WHERE  `id`=$id LIMIT 1000");
+        $sql = $conn->prepare("UPDATE `$this->DB_DATABASE`.`$this->TABLE_CDS` SET `image`='$image' WHERE  `id`=$id LIMIT 1000");
         $sql->execute();
         $result = $sql;
 
@@ -93,7 +83,7 @@ class AjaxDB extends ConnectMySQL {
     public function getCdbyID($id)
     {
         $conn = $this->connectToDB();
-        $sql = $conn->prepare("SELECT * FROM `music`.`cds` WHERE `id`=$id LIMIT 1000");
+        $sql = $conn->prepare("SELECT * FROM `$this->DB_DATABASE`.`$this->TABLE_CDS` WHERE `id`=$id LIMIT 1000");
         $sql->execute();
         $result = $sql;
 
@@ -108,7 +98,7 @@ class AjaxDB extends ConnectMySQL {
     public function updateCD($id, $interpret, $genre, $year, $desc)
     {
         $conn = $this->connectToDB();
-        $sql = $conn->prepare("UPDATE `music`.`cds` SET `interpret`='$interpret', `genre`='$genre', `year`=$year, `desc`='$desc' WHERE  `id`=$id LIMIT 1000");
+        $sql = $conn->prepare("UPDATE `$this->DB_DATABASE`.`$this->TABLE_CDS` SET `interpret`='$interpret', `genre`='$genre', `year`=$year, `desc`='$desc' WHERE  `id`=$id LIMIT 1000");
         $sql->execute();
         $result = $sql;
 
@@ -123,7 +113,7 @@ class AjaxDB extends ConnectMySQL {
     public function deleteCD($id)
     {
         $conn = $this->connectToDB();
-        $sql = $conn->prepare("DELETE FROM `music`.`cds` WHERE `id`=$id LIMIT 1000");
+        $sql = $conn->prepare("DELETE FROM `$this->DB_DATABASE`.`$this->TABLE_CDS` WHERE `id`=$id LIMIT 1000");
         $sql->execute();
         $result = $sql;
 

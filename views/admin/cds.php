@@ -9,7 +9,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
 }
 
     $db = new AjaxDB();
-    $row = $db->getCodeByUsername(htmlspecialchars(stripslashes(trim($_SESSION["user"]))));
+    $row = $db->getUserByUsername(htmlspecialchars(stripslashes(trim($_SESSION["user"]))));
 
     if (password_verify( $row["code"], $_SESSION['code'])) {
 

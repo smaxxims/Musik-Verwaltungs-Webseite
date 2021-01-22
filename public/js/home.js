@@ -165,11 +165,9 @@ const postLoginByBtn = btn => {
 
                     const reloadPage = () => location.reload()
                     setTimeout(reloadPage, 3000)
-
                 }
-                $('.msb-box').html(res)
+                $('.msb-box').hide().html(res).fadeIn('slow')
             },
-
         })
     })
 }

@@ -1,6 +1,6 @@
 <?php
 include "../db/AjaxDB.php";
-include "../models/Title.php";
+include "../controller/Controller.php";
 
 if (isset($_GET['id'])) :
 
@@ -9,8 +9,8 @@ if (isset($_GET['id'])) :
     $row = $ajaxDB->getCdbyID($id);
 
     //include "audio.php";
-    $title = new Title();
-    $music = $title->getUploadedFiles("../public/audio/".$id);
+    $title = new Controller();
+    $music = $title->getFilesInDir("../public/audio/".$id);
 
     if ($row["id"] == $id) :
         include "../layouts/_cd.php";

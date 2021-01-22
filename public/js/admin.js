@@ -30,11 +30,7 @@ function createNewCd(btn) {
                 console.log(e)
             },
             success: function (res) {
-                $('.msb-box-data').html(res)
-                console.log(res)
-            },
-            complete: function () {
-
+                $('.msb-box-data').hide().html(res).fadeIn('slow')
             }
         })
     })
@@ -67,7 +63,7 @@ function updateCdImage(btn) {
                 console.log(e)
             },
             success: function (res) {
-                $('.msb-box-image').html(res)
+                $('.msb-box-image').hide().html(res).fadeIn('slow')
 
             }
         })
@@ -93,7 +89,8 @@ function updateCdAudio(btn) {
              size = size + fileList[i].size 
         }
         console.log(niceBytes(size))
-        $('.msb-box-title').html("<div class='alert alert-info' role='alert'>Gesamtgröße:" +niceBytes(size)+"</div>")
+        $('.msb-box-title').hide().html("<div class='alert alert-info' role='alert'>Gesamtgröße:" +niceBytes(size)+"</div>").fadeIn('slow')
+
         return fileList
     })
 
@@ -122,9 +119,6 @@ function updateCdAudio(btn) {
             success: function (res) {
                 $('.msb-box-title').html(res)
                 console.log(res)
-            },
-            complete: function () {
-
             }
         })
     })
@@ -171,11 +165,7 @@ function updateCdData(btn) {
                 console.log(e)
             },
             success: function (res) {
-                $('.msb-box-data').html(res)
-                console.log(res)
-            },
-            complete: function () {
-
+                $('.msb-box-data').hide().html(res).fadeIn('slow')
             }
         })
     })
@@ -185,7 +175,6 @@ function updateCdData(btn) {
 function deleteOneTitle(btn) {
 
     $(btn).mousedown(function (event) {
-
 
         const queryString = window.location.search
         const urlParams = new URLSearchParams(queryString)
@@ -214,9 +203,6 @@ function deleteOneTitle(btn) {
                         $(this).fadeOut('slow')
                     } 
                 })
-            },
-            complete: function () {
-
             }
         })
         } else {
@@ -227,5 +213,3 @@ function deleteOneTitle(btn) {
 
 
 init()
-
-

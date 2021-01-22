@@ -1,6 +1,6 @@
 <?php
 include "../../db/AjaxDB.php";
-include "../../models/Title.php";
+include "../../controller/Controller.php";
 
 session_start();
 
@@ -26,8 +26,8 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == 'admin') :
     endif;
 
     // delete audio
-    $delTitle = new Title();
-    $delTitle->delTree("../../public/audio/".$id);
+    $delTitle = new Controller();
+    $delTitle->deleteAudioDirAndFilesIn("../../public/audio/".$id);
 
 endif;
 
