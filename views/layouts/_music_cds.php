@@ -1,9 +1,23 @@
 
 <h1 class="page-title">Musik CD´s</h1>
-<br><br>
+<br>
+<div class="row">
+    <div class="col-lg-8 search-result">
+
+    </div><!-- /.col-lg-6 -->
+    <div class="col-lg-3">
+        <div class="input-group">
+            <input type="text" class="form-control cd-search-field" placeholder="CD Suchen">
+            <span class="input-group-btn">
+        <button class="btn btn-info cd-search-btn" type="button">Suchen</button>
+      </span>
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+<br>
 <div class="row cds">
 
-    <?php foreach ($rows as $cd) {?>
+    <?php foreach ($cds as $cd) {?>
 
         <div class="col-xs-12 col-md-4 p cd icon-item">
             <a data-id='<?= $cd['id']; ?>' class="pa musik-cd-btn icon-link">
@@ -18,5 +32,5 @@
             <h4><?= $cd['year']; ?></h4>
             <a data-id='<?= $cd['id']; ?>' class="musik-cd-btn" >Mehr Details</a>
         </div>
-        
+
     <?php } ?>

@@ -1,6 +1,5 @@
 <?php
 
-
 class ControllerUser
 {
     public function getFilesInDir($directory)

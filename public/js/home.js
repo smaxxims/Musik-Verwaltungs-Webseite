@@ -1,4 +1,3 @@
-
 const init = () => {
     getCdsByBtn('.musik-cds-nav-btn')
     getHomeByBtn('.home-nav-btn')
@@ -25,10 +24,10 @@ $('.banner-btn').click(function () {
 })
 
 // active nav link color on use
-$('.nav-link').click(function() {
+$('.nav-link').click(function () {
     $("li a:first-child").removeClass('open');
     $(this).addClass('open')
-  });
+});
 
 // get cds
 const getCdsByBtn = btn => {
@@ -47,6 +46,37 @@ const getCdsByBtn = btn => {
                 $('.bottom-nav').html(res)
                 $('.pimage').css('animation', '1s cubic-bezier(.79,.14,.15,.86) 0s 1 normal none running rotation')
                 getCdByIdByBtn('.musik-cd-btn')
+
+                $(".cd-search-field").keydown(function () {
+                    $(".cd-search-field").css("color", "#16c3cf");
+                });
+                $(".cd-search-field").keyup(function () {
+                    $(".cd-search-field").css("color", "white");
+
+                    // search cd
+                    let formData = {
+                        'cd-search-field': $(".cd-search-field").val(),
+                    };
+
+                    $.ajax({
+                        type: "POST",
+                        url: "music-cds.php",
+                        data: formData,
+                        dataType: "html",
+                        error: function (e) {
+                            console.log(`Error: ${e}`);
+                        },
+                        success: function (res) {
+                            if (res.includes('Keine Cds')) {
+                                $('.cds').hide().html(res).fadeIn('slow')
+                                $('.cds').css("color", "white");
+                            } else {
+                                $('.cds').html(res)
+                            }
+                            getCdByIdByBtn('.musik-cd-btn')
+                        }
+                    });
+                });
             }
         })
     })
@@ -194,7 +224,7 @@ const getCdByIdByBtn = btn => {
             }
 
         });
-        $('.bottom-nav').animate({ scrollTop: 0 }, 'slow')
+        $('.bottom-nav').animate({scrollTop: 0}, 'slow')
     })
 }
 
