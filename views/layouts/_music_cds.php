@@ -16,7 +16,7 @@
             <h3><?= $cd['interpret']; ?></h3>
             <h4><?= $cd['genre']; ?></h4>
             <h4><?= $cd['year']; ?></h4>
-            <a data-id='<?= $cd['id']; ?>' class="musik-cd-btn">Mehr Details</a>
+            <a data-id='<?= $cd['id']; ?>' class="musik-cd-btn" >Mehr Details</a>
         </div>
         
     <?php } ?>

@@ -118,7 +118,6 @@ function updateCdAudio(btn) {
             },
             success: function (res) {
                 $('.msb-box-title').html(res)
-                console.log(res)
             }
         })
     })

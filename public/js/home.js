@@ -10,20 +10,21 @@ const init = () => {
 // open and close menu and main-content 
 $('.hamburger-menu').click(function () {
     $('.nav-wrapper').toggleClass('change')
+    $('.nav-wrapper').hasClass('change') ? $('.footer-div').hide() : $('.footer-div').show()
     if ($('.bottom-nav').text() == '') {
-        console.log("test");
         getHomeContent()
     }
 })
 
 $('.banner-btn').click(function () {
     $('.nav-wrapper').toggleClass('change')
+    $('.nav-wrapper').hasClass('change') ? $('.footer-div').hide() : $('.footer-div').show()
     if ($('.bottom-nav').text() == '') {
         getHomeContent()
     }
 })
 
-// active nav link
+// active nav link color on use
 $('.nav-link').click(function() {
     $("li a:first-child").removeClass('open');
     $(this).addClass('open')
@@ -188,7 +189,8 @@ const getCdByIdByBtn = btn => {
 
             success: function (response) {
                 $('.bottom-nav').html(response)
-                $('.bottom-nav').css('position', 'absolute')
+
+                //$('.bottom-nav').css('position', 'absolute')
             }
 
         });
