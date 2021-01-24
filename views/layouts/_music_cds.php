@@ -8,9 +8,6 @@
     <div class="col-lg-3">
         <div class="input-group">
             <input type="text" class="form-control cd-search-field" placeholder="CD Suchen">
-            <span class="input-group-btn">
-        <button class="btn btn-info cd-search-btn" type="button">Suchen</button>
-      </span>
         </div><!-- /input-group -->
     </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
@@ -34,3 +31,7 @@
         </div>
 
     <?php } ?>
+</div>
+<div class="row load-next-row">
+<button class="btn btn-primary load-more-cds">weitere CD`s laden</button>
+</div>

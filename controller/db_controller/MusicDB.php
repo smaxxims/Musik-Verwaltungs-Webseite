@@ -50,10 +50,10 @@ class MusicDB extends ConnectMySQL {
         }
     }
 
-    public function getCDs() 
+    public function getCDs($startCd = 0, $endCd = 3)
     {
         $conn = $this->connectToDB();
-        $sql = $conn->prepare("SELECT * FROM `$this->DB_DATABASE`.`$this->TABLE_CDS` LIMIT 1000");
+        $sql = $conn->prepare("SELECT * FROM `$this->DB_DATABASE`.`$this->TABLE_CDS` LIMIT $startCd,$endCd");
         $sql->execute();
         $result = $sql;
 

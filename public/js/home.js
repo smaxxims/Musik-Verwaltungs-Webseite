@@ -32,6 +32,7 @@ $('.nav-link').click(function () {
 // get cds
 const getCdsByBtn = btn => {
     $(btn).mousedown(function () {
+
         $.ajax({
             type: "POST",
             url: "music-cds.php",
@@ -45,19 +46,44 @@ const getCdsByBtn = btn => {
             success: function (res) {
                 $('.bottom-nav').html(res)
                 $('.pimage').css('animation', '1s cubic-bezier(.79,.14,.15,.86) 0s 1 normal none running rotation')
+
+                // click event to show details of one cd
                 getCdByIdByBtn('.musik-cd-btn')
 
+                // show next cds
+                $('.load-more-cds').mousedown(function () {
+                    let cdsCount = {
+                        'cds-count': $('.cds').children().length
+                    }
+
+                    $.ajax({
+                        type: "POST",
+                        url: "load-next-cds.php",
+                        data: cdsCount,
+                        dataType: "html",
+                        cache: false,
+
+                        error: function (e) {
+                            console.log(e);
+                        },
+                        success: function (res) {
+                            $('.cds').append(res)
+                            getCdByIdByBtn('.musik-cd-btn')
+                        }
+                    })
+                })
+
+                // search cd
                 $(".cd-search-field").keydown(function () {
                     $(".cd-search-field").css("color", "#16c3cf");
                 });
                 $(".cd-search-field").keyup(function () {
+                    $('.load-more-cds').hide()
                     $(".cd-search-field").css("color", "white");
 
-                    // search cd
                     let formData = {
                         'cd-search-field': $(".cd-search-field").val(),
                     };
-
                     $.ajax({
                         type: "POST",
                         url: "music-cds.php",
@@ -74,10 +100,14 @@ const getCdsByBtn = btn => {
                                 $('.cds').html(res)
                             }
                             getCdByIdByBtn('.musik-cd-btn')
+                            if($(".cd-search-field").val() == '') {
+                                $('.load-more-cds').show()
+                            }
                         }
                     });
                 });
-            }
+
+            } // success end
         })
     })
 }

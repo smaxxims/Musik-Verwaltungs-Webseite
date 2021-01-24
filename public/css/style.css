@@ -19,7 +19,7 @@ img.pimage {
 }
 
 img.cd-image {
-    width: 100%;
+    width: 90%;
 }
 
 img.cds-image {
@@ -283,6 +283,11 @@ label {
     overflow       : auto;
 }
 
+.load-next-row {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .bottom-nav h1,
 h2,
 h3,
@@ -292,6 +297,16 @@ th,
 td,
 p,li,b {
     color: #ffffffd4;
+}
+
+.bottom-nav h1 {
+    color: #7becf4;
+}
+
+.bottom-nav li {
+    list-style: inside circle;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
 }
 
 .change .bottom-nav {

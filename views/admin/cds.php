@@ -14,7 +14,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
     if (password_verify( $row["code"], $_SESSION['code'])) {
 
         $ajaxDB = new MusicDB();
-        $rows = $ajaxDB->getCDs();
+        $rows = $ajaxDB->getCDs(0, 20);
 
         $titelOfCd = new ControllerAdmin();
         include "../layouts/admin/_cds.php";
