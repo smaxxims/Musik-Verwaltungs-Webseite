@@ -1,21 +1,19 @@
 <?php
-include "../controller/db_controller/MusicDB.php";
 include "../controller/user/ControllerUser.php";
 
 if (isset($_GET['id'])) :
 
-    $id = $_GET['id'];
-    $ajaxDB = new MusicDB();
-    $row = $ajaxDB->getCdbyID($id);
+    $cdData = new ControllerUser();
+    $cdData->setCdId((htmlspecialchars(stripslashes(trim($_GET['id'])))));
 
-    //include "audio.php";
-    $title = new ControllerUser();
-    $music = $title->getFilesInDir("../public/audio/".$id);
+    $row = $cdData->getCdData($cdData->getCdId());
+    $music = $cdData->getFilesInDir("../public/audio/".$cdData->getCdId());
 
-    if ($row["id"] == $id) :
+    if ($cdData->checkIdSame($row["id"], $cdData->getCdId())) :
         include "layouts/_cd.php";
     else :
         echo "Keine Informationen zu dieser CD.";
     endif;
+
 endif;
 ?>

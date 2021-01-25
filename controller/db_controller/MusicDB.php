@@ -3,8 +3,19 @@ include "ConnectMySQL.php";
 
 class MusicDB extends ConnectMySQL {
 
+    private $id;
     private $TABLE_CDS = 'cds';
     private $TABLE_USER = 'user';
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id): void
+    {
+        $this->id = htmlspecialchars(stripslashes(trim($id)));
+    }
 
     // table user
     public function getUserByUsername($username)

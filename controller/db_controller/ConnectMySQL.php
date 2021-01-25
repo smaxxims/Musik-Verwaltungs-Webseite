@@ -1,5 +1,4 @@
 <?php
-
 class ConnectMySQL {
 
     protected $DB_SERVER = 'localhost';
