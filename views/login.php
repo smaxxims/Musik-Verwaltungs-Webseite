@@ -21,6 +21,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) :
         else :
             if (password_verify($user->getPassword(), $row["password"])) {
                 echo "<div class='alert alert-success' role='alert'>Eingeloggt! Sie werden in Kürze zum Adminbereich weitergeleitet.</div>";
+                session_regenerate_id();
                 $_SESSION['user'] = $user->getUsername();
 
                 $util = new Util();

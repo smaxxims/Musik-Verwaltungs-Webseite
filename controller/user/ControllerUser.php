@@ -43,8 +43,7 @@ class ControllerUser
         return $cds;
     }
 
-    public function searchCD($inputSearchCD)
-    {
+    public function showSearchedCD($inputSearchCD) : array {
         $musicDB = new MusicDB();
 
         if ($inputSearchCD == "") {
@@ -52,7 +51,11 @@ class ControllerUser
         } else {
             $cds = $musicDB->getCds(0, 20);
         }
+        return $cds;
+    }
 
+    public function searchCD($inputSearchCD, $cds)
+    {
         $notFind = 0;
         $find = 0;
         foreach ($cds as $cd) {

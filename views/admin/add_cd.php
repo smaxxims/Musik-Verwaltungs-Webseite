@@ -1,4 +1,3 @@
-
 <?php
 include "../layouts/admin/_admin_header.html";
 include "../../controller/db_controller/MusicDB.php";
@@ -8,9 +7,16 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
     header("Location: ../home.php");
 }
 
+$db = new MusicDB();
+$row = $db->getUserByUsername(htmlspecialchars(stripslashes(trim($_SESSION["user"]))));
 
-include "../layouts/admin/_add_cd.html";
-include "../layouts/admin/_admin_footer.html";
+if (password_verify($row["code"], $_SESSION['code'])) {
+    include "../layouts/admin/_add_cd.html";
+    include "../layouts/admin/_admin_footer.html";
+} else {
+    echo "Sie sind nicht als Admin eingeloggt!";
+}
+
 ?>
 
 <script>
@@ -30,7 +36,5 @@ include "../layouts/admin/_admin_footer.html";
             readUrl(this)
         })
     });
-
-
 </script>
 

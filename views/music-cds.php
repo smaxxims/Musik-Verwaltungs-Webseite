@@ -8,7 +8,8 @@ if (!isset($_POST["cd-search-field"])) {
     include "layouts/_music_cds.php";
 } else {
     $userController2 = new ControllerUser();
-    $userController2->searchCD(htmlspecialchars(stripslashes(trim($_POST["cd-search-field"]))));
+    $cds = $userController2->showSearchedCD(htmlspecialchars(stripslashes(trim($_POST["cd-search-field"]))));
+    $userController2->searchCD(htmlspecialchars(stripslashes(trim($_POST["cd-search-field"]))), $cds);
 }
 
 ?>

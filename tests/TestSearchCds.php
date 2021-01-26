@@ -7,11 +7,22 @@ include "../controller/user/ControllerUser.php";
 
 class TestSearchCds extends TestCase
 {
-    function testSearchCdIsString()
+    function testShowSearchedCdIsArray()
     {
         $controllerUser = new ControllerUser();
-        $result = $controllerUser->searchCD("");
-        $this->assertIsString($result);
-        echo "complete: testIsString";
+        $result = $controllerUser->showSearchedCD("");
+        $this->assertIsArray($result);
+        echo "complete: testShowSearchedCdIsArray";
+    }
+    function testShowSearchedCdCountIfInputIsEmpty()
+    {
+        $controllerUser = new ControllerUser();
+        $result = $controllerUser->showSearchedCD("");
+        $expectedCount = 3;
+        $this->assertCount(
+            $expectedCount,
+            $result, "testArray doesn't contains 3 elements"
+        );
+        echo "complete: testShowSearchedCdCountIfInputIsEmpty";
     }
 }
