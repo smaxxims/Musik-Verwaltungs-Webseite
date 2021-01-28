@@ -7,12 +7,12 @@ if (isset($_GET['id'])) :
 
     $util = new Util();
     $cdData = new ControllerUser();
-    $cdData->setCdId((htmlspecialchars(stripslashes(trim($_GET['id'])))));
+    $cdData->setCdId(($util->valStr($_GET['id'])));
 
     $row = $cdData->getCdData($cdData->getCdId());
     $music = $cdData->getFilesInDir("../public/audio/".$cdData->getCdId());
 
-    if ($cdData->checkIdSame($row["id"], $cdData->getCdId())) :
+    if ($cdData->checkIdSame($util->valStr($row["id"]), $cdData->getCdId())) :
         include "layouts/_cd.php";
     else :
         echo "Keine Informationen zu dieser CD.";

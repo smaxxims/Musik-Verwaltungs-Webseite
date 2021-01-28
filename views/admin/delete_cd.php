@@ -1,13 +1,16 @@
 <?php
 include "../../controller/db_controller/MusicDB.php";
 include "../../controller/admin/ControllerAdmin.php";
+include "../../utils/Util.php";
 
 session_start();
 
-if (isset($_SESSION['user']) && $_SESSION['user'] == 'admin') :
+$util = new Util();
 
-    $id = $_GET['id'];
-    $image = $_GET['image'];
+if (isset($_SESSION['user']) && $util->valStr($_SESSION['user']) == 'admin') :
+
+    $id = $util->valStr($_GET['id']);
+    $image = $util->valStr($_GET['image']);
 
     $ajaxDB = new MusicDB();
     $ajaxDB->deleteCD($id);

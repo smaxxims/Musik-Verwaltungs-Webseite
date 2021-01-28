@@ -1,17 +1,17 @@
 <div class="row scrollDesign">
     <h1 class="page-header">Musik-CD</h1>
     <div class="col-xs-12 col-md-5">
-        <?php if (empty($util ->valStr($row["image"]))) : ?>
+        <?php if (empty($util->valStr($row["image"]))) : ?>
             <img src="../../public/images/noimage.jpg" class="cd-image">
         <?php else : ?>
-            <img src="../public/images/<?= $util ->valStr($row["image"]) ?>" class="cd-image">
+            <img src="../public/images/<?= $util->valStr($row["image"]) ?>" class="cd-image">
         <?php endif; ?>
         <br>
     </div>
     <div class="col-xs-12 col-md-7">
 
-        <h3><?= $util ->valStr($row["interpret"]) ?></h3>
-        <h5><?= $util ->valStr($row["desc"]) ?></h5>
+        <h3><?= $util->valStr($row["interpret"]) ?></h3>
+        <h5><?= $util->valStr($row["desc"]) ?></h5>
 
         <table class="table alignmiddle">
             <thead>
@@ -24,8 +24,8 @@
 
             <tbody>
                 <tr>
-                    <td><?= $util ->valStr($row["genre"]) ?></td>
-                    <td><?= $util ->valStr($row["year"]) ?></td>
+                    <td><?= $util->valStr($row["genre"]) ?></td>
+                    <td><?= $util->valStr($row["year"]) ?></td>
 
                     <td><?= count($music) ?></td>
 
@@ -56,11 +56,11 @@
                         $check--;
                 ?>
                         <tr class="tr-hover">
-                            <td><?= $util ->valStr($music[$titleIndex++]['filename']) ?></td>
+                            <td><?= $util->valStr($music[$titleIndex++]['filename']) ?></td>
                             <td class="player-td">
 
                                 <audio controls="controls">
-                                    <source src="../public/audio/<?= $util ->valStr($row["id"]) ?>/<?= $util ->valStr($music[$playerIndex++]["filename"]) ?>" type="audio/mpeg" />
+                                    <source src="../public/audio/<?= $util->valStr($row["id"]) ?>/<?= $util->valStr($music[$playerIndex++]["filename"]) ?>" type="audio/mpeg" />
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>

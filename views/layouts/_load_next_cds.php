@@ -1,7 +1,7 @@
 <?php foreach ($cds as $cd) {?>
 
     <div class="col-xs-12 col-md-4 p cd icon-item">
-        <a data-id='<?php $util->valStr($cd['id']); ?>' class="pa musik-cd-btn icon-link">
+        <a data-id='<?= $util->valStr($cd['id']); ?>' class="pa musik-cd-btn icon-link">
             <?php if (empty($util->valStr($cd["image"]))) : ?>
                 <img src="../../public/images/noimage.jpg" class="pimage">
             <?php else : ?>
