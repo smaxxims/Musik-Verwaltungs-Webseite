@@ -93,7 +93,6 @@ class MusicDB extends ConnectMySQL {
 
     public function getCdbyID($id)
     {
-        echo gettype($id);
         $conn = $this->connectToDB();
         $sql = $conn->prepare("SELECT * FROM `$this->DB_DATABASE`.`$this->TABLE_CDS` WHERE `id`=$id LIMIT 1000");
         $sql->execute();
