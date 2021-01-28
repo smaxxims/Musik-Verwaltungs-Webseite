@@ -3,6 +3,9 @@ include "../controller/user/ControllerUser.php";
 
 if (isset($_GET['id'])) :
 
+    include "../utils/Util.php";
+
+    $util = new Util();
     $cdData = new ControllerUser();
     $cdData->setCdId((htmlspecialchars(stripslashes(trim($_GET['id'])))));
 

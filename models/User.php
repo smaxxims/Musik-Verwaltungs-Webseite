@@ -7,8 +7,8 @@ class User {
 
     public function __construct($username, $password)
     {
-        $this->username = htmlspecialchars(stripslashes(trim($username)));
-        $this->password = htmlspecialchars(stripslashes(trim($password)));
+        $this->username = $username;
+        $this->password = $password;
     }
 
     public function getUsername()

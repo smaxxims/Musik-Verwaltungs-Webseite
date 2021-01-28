@@ -10,11 +10,11 @@ class Cd
 
     public function __construct($interpret = "", $genre = "", $year = 0, $image = "", $desc = "")
     {
-        $this->interpret = htmlspecialchars(stripslashes(trim($interpret)));
-        $this->genre = htmlspecialchars(stripslashes(trim($genre)));
-        $this->year = htmlspecialchars(stripslashes(trim($year)));
-        $this->image = htmlspecialchars(stripslashes(trim($image)));
-        $this->desc = htmlspecialchars(stripslashes(trim($desc)));
+        $this->interpret = $interpret;
+        $this->genre = $genre;
+        $this->year = $year;
+        $this->image = $image;
+        $this->desc = $desc;
     }
 
     public function uploadImage($imageTmpName, $image) {

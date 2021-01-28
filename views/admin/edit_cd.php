@@ -3,14 +3,16 @@ include "../layouts/admin/_admin_header.html";
 include "../../controller/db_controller/MusicDB.php";
 include "../../models/Cd.php";
 include "../../controller/admin/ControllerAdmin.php";
+include "../../utils/Util.php";
 
 
 if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
     header("Location: ../home.php");
 }
+$util = new Util();
 
 if (isset($_GET['id'])) :
-    $id = $_GET['id'];
+    $id = $util->valStr($_GET['id']);
 
 // get cd data and image by id from db
     $ajaxDB = new MusicDB();

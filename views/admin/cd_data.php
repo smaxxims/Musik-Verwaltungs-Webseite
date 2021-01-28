@@ -2,6 +2,7 @@
 session_start();
 include "../../models/Cd.php";
 include "../../controller/db_controller/MusicDB.php";
+include "../../utils/Util.php";
 
 if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
     header("Location: ../home.php");
@@ -10,9 +11,10 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
 // cd data
 if (isset($_POST["interpret"]) && isset($_POST["desc"]) && isset($_POST["id"]) && isset($_POST["genre"]) && isset($_POST["year"]) ) {
 
-    $cd = new Cd($_POST["interpret"], $_POST["genre"], $_POST["year"], "", $_POST["desc"]);
+    $util = new Util();
+    $cd = new Cd($util->valStr($_POST["interpret"]), $util->valStr($_POST["genre"]), $util->valStr($_POST["year"]), $util->valStr(""), $util->valStr($_POST["desc"]));
     $ajaxDB = new MusicDB();
-    $ajaxDB->updateCD($_POST["id"], $cd->getInterpret(), $cd->getGenre(), $cd->getYear(), $cd->getDesc());
+    $ajaxDB->updateCD($util->valStr($_POST["id"]), $cd->getInterpret(), $cd->getGenre(), $cd->getYear(), $cd->getDesc());
 
 
 }

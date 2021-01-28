@@ -22,7 +22,7 @@ function createNewCd(btn) {
         $.ajax({
 
             type: "POST",
-            url: "../../views/admin/add_cd_ajax.php",
+            url: "../../views/admin/add_cd_ajax",
             data: formData,
             contentType: false,
             processData: false,
@@ -54,7 +54,7 @@ function updateCdImage(btn) {
         $.ajax({
 
             type: "POST",
-            url: "../../views/admin/upload.php",
+            url: "../../views/admin/upload",
             dataType: 'text',
             data: formData,
             contentType: false,
@@ -109,7 +109,7 @@ function updateCdAudio(btn) {
         $.ajax({
 
             type: "POST",
-            url: "../../views/admin/audio.php",
+            url: "../../views/admin/audio",
             data: data,
             contentType: false,
             processData: false,
@@ -156,7 +156,7 @@ function updateCdData(btn) {
         $.ajax({
 
             type: "POST",
-            url: "../../views/admin/cd_data.php",
+            url: "../../views/admin/cd_data",
             data: formData,
             contentType: false,
             processData: false,
@@ -187,7 +187,7 @@ function deleteOneTitle(btn) {
         $.ajax({
 
             type: "POST",
-            url: "../../views/admin/delete_one_title.php",
+            url: "../../views/admin/delete_one_title",
             data: formData,
             contentType: false,
             processData: false,

@@ -1,10 +1,13 @@
 <?php
 include "../controller/db_controller/MusicDB.php";
+include "../utils/Util.php";
 
-$musicDB = new MusicDB();
+
 
 if (isset($_POST['cds-count'])) {
-    $cds = $musicDB->getCds($_POST['cds-count']);
+    $util = new Util();
+    $musicDB = new MusicDB();
+    $cds = $musicDB->getCds($util->valStr($_POST['cds-count']));
     include "layouts/_load_next_cds.php";
 }
 

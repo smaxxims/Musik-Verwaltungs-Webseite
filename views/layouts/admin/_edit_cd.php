@@ -10,10 +10,10 @@
         <form>
             <div class="form-group ">
                 <p>
-                    <?php if (empty($rowCD["image"])) : ?>
+                    <?php if (empty($util->valStr($rowCD["image"]))) : ?>
                         <img src="../../../public/images/noimage.jpg" class="cd-image">
                     <?php else : ?>
-                        <img src="../../public/images/<?= $rowCD['image'] ?>" class="cd-image">
+                        <img src="../../public/images/<?= $util->valStr($rowCD['image']) ?>" class="cd-image">
                     <?php endif; ?>
                 </p>
             </div>
@@ -39,21 +39,21 @@
         <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label>Interpret</label>
-                <input type="text" class="form-control" name="interpret" data-data="interpret" value="<?= $rowCD['interpret'] ?>" placeholder="Interpret" required>
+                <input type="text" class="form-control" name="interpret" data-data="interpret" value="<?= $util->valStr($rowCD['interpret']) ?>" placeholder="Interpret" required>
             </div>
             <div class="form-group ">
                 <label>Beschreibung</label>
                 <textarea type="text" class="form-control" name="desc" cols="30" rows="10" placeholder="Beschreibung" required>
-               <?php echo $rowCD['desc']?> 
+               <?php echo $util->valStr($rowCD['desc'])?>
                 </textarea>
             </div>
             <div class="form-group">
                 <label>Genre</label>
-                <input type="text" class="form-control" name="genre" data-data="genre" value="<?= $rowCD['genre'] ?>" placeholder="Genre" required>
+                <input type="text" class="form-control" name="genre" data-data="genre" value="<?= $util->valStr($rowCD['genre']) ?>" placeholder="Genre" required>
             </div>
             <div class="form-group">
                 <label>Jahr</label>
-                <input name="year" type="number" data-data="year" min="1900" max="2021" step="1" class="form-control" value="<?= $rowCD['year'] ?>" placeholder="Jahr" required>
+                <input name="year" type="number" data-data="year" min="1900" max="2021" step="1" class="form-control" value="<?= $util->valStr($rowCD['year']) ?>" placeholder="Jahr" required>
             </div>
             <input type="button" class="btn btn-success submit-data" value="CD Daten aktuallisieren"></input>
         </form>
@@ -89,11 +89,11 @@
                         ?>
                                 <tr class="title-row">
                                     <td class="titleName" name="title<?= $titleNameNum++; ?>" placeholder="Titel">
-                                        <?= $music[$titleIndex++]['filename'] ?>
+                                        <?= $util->valStr($music[$titleIndex++]['filename']) ?>
                                     </td>
                                     <td class="player-td" style="width:30%">
                                         <audio controls="controls">
-                                            <source src="../../public/audio/<?= $rowCD['id'] ?>/<?= $music[$playerIndex++]['filename'] ?>" type="audio/mpeg" />
+                                            <source src="../../public/audio/<?= $util->valStr($rowCD['id']) ?>/<?= $util->valStr($music[$playerIndex++]['filename']) ?>" type="audio/mpeg" />
                                             Your browser does not support the audio element.
                                         </audio>
                                     </td>
@@ -104,7 +104,7 @@
                         <?php
                             endwhile;
                         else :
-                            echo "<div class='alert alert-info' role='alert'>Keine Titel für \"" . $rowCD['interpret'] . "\" gespeichert.</div>";
+                            echo "<div class='alert alert-info' role='alert'>Keine Titel für \"" . $util->valStr($rowCD['interpret']) . "\" gespeichert.</div>";
                         endif;
                         ?>
                     </tbody>

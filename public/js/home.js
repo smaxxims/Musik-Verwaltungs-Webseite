@@ -35,7 +35,7 @@ const getCdsByBtn = btn => {
 
         $.ajax({
             type: "POST",
-            url: "music-cds.php",
+            url: "music-cds",
             contentType: "application/json; charset=utf-8",
             dataType: "html",
             cache: false,
@@ -58,7 +58,7 @@ const getCdsByBtn = btn => {
 
                     $.ajax({
                         type: "POST",
-                        url: "load-next-cds.php",
+                        url: "load-next-cds",
                         data: cdsCount,
                         dataType: "html",
                         cache: false,
@@ -86,7 +86,7 @@ const getCdsByBtn = btn => {
                     };
                     $.ajax({
                         type: "POST",
-                        url: "music-cds.php",
+                        url: "music-cds",
                         data: formData,
                         dataType: "html",
                         error: function (e) {
@@ -118,7 +118,7 @@ const getHomeByBtn = btn => {
 
         $.ajax({
             type: "POST",
-            url: "home_content_nav.php",
+            url: "home_content_nav",
             contentType: "application/json; charset=utf-8",
             dataType: "html",
             cache: false,
@@ -137,7 +137,7 @@ const getHomeByBtn = btn => {
 const getHomeContent = () => {
     $.ajax({
         type: "POST",
-        url: "home_content_nav.php",
+        url: "home_content_nav",
         contentType: "application/json; charset=utf-8",
         dataType: "html",
         cache: false,
@@ -158,7 +158,7 @@ const getContactBy = btn => {
 
         $.ajax({
             type: "POST",
-            url: "contact.php",
+            url: "contact",
             dataType: "html",
             cache: false,
 
@@ -184,7 +184,7 @@ const getLoginByBtn = btn => {
 
         $.ajax({
             type: "POST",
-            url: "login.php",
+            url: "login",
             contentType: "application/json; charset=utf-8",
             dataType: "html",
             cache: false,
@@ -212,7 +212,7 @@ const postLoginByBtn = btn => {
 
         $.ajax({
             type: "POST",
-            url: "login.php",
+            url: "login",
             data: formData,
             cache: false,
 
@@ -241,7 +241,7 @@ const getCdByIdByBtn = btn => {
 
         $.ajax({
             type: "POST",
-            url: "cd.php?id=" + dataId,
+            url: "cd?id=" + dataId,
             dataType: "html",
             error: function (e) {
                 console.log(`Error: ${e}`);

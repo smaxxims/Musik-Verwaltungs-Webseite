@@ -2,13 +2,14 @@
 include "../layouts/admin/_admin_header.html";
 include "../../controller/db_controller/MusicDB.php";
 include "../../models/Cd.php";
+include "../../utils/Util.php";
 
 if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
     header("Location: ../home.php");
 }
-
+$util = new Util();
 $db = new MusicDB();
-$row = $db->getUserByUsername(htmlspecialchars(stripslashes(trim($_SESSION["user"]))));
+$row = $db->getUserByUsername($util->valStr($_SESSION["user"]));
 
 if (password_verify($row["code"], $_SESSION['code'])) {
     include "../layouts/admin/_add_cd.html";
@@ -37,4 +38,5 @@ if (password_verify($row["code"], $_SESSION['code'])) {
         })
     });
 </script>
+
 

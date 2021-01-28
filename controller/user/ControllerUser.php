@@ -5,6 +5,7 @@ spl_autoload_register(function ($classname) {
 });
 
 
+
 class ControllerUser
 {
     private $cdId;
@@ -56,6 +57,9 @@ class ControllerUser
 
     public function searchCD($inputSearchCD, $cds)
     {
+        include_once "../utils/Util.php";
+        $util = new Util();
+
         $notFind = 0;
         $find = 0;
         foreach ($cds as $cd) {

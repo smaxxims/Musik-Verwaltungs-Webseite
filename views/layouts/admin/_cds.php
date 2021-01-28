@@ -23,23 +23,23 @@
         foreach ($rows as $key => $row) :
     ?>
     <tr>
-        <td><?= $row[1] ?></td>
-        <td><?= $row[2] ?></td>
-        <td><?= $row[3] ?></td>
+        <td><?= $util->valStr($row[1]) ?></td>
+        <td><?= $util->valStr($row[2]) ?></td>
+        <td><?= $util->valStr($row[3]) ?></td>
         <td>
-            <?php if (empty($row[4])) : ?>
+            <?php if (empty($util->valStr($row[4]))) : ?>
             <img src="../../../public/images/noimage.jpg" class="cds-image">
             <?php else : ?>
-            <img src="../../public/images/<?= $row[4] ?>" class="cds-image">
+            <img src="../../public/images/<?= $util->valStr($row[4]) ?>" class="cds-image">
             <?php endif; ?>
         </td>
 <?php
-        $music = $titelOfCd->getFilesInDir("../../public/audio/".$row[0]);
+        $music = $titelOfCd->getFilesInDir("../../public/audio/".$util->valStr($row[0]));
 ?>
         <td><?= count($music) ?></td>
 
-        <td><a href="/cd/views/admin/edit_cd?id=<?= $row[0] ?>" class="btn btn-info">Bearbeiten</a></td>
-        <td><a href="/cd/views/admin/delete_cd?id=<?= $row[0] ?>&image=<?= $row[4] ?>" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</a></td>
+        <td><a href="/cd/views/admin/edit_cd?id=<?= $util->valStr($row[0]) ?>" class="btn btn-info">Bearbeiten</a></td>
+        <td><a href="/cd/views/admin/delete_cd?id=<?= $util->valStr($row[0]) ?>&image=<?= $util->valStr($row[4]) ?>" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</a></td>
     </tr>
     <?php
             endforeach;
