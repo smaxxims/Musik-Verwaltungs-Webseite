@@ -1,4 +1,5 @@
 <h1>Musik CD`s</h1>
+<img src="public/images/noimage.jpg">
 <br>
 <h3>Funktionen</h3>
 <ul>
