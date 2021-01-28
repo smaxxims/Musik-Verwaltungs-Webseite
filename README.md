@@ -11,7 +11,6 @@
 <img src="public/images/preview_screenshot_cds_admin.png">
 <img src="public/images/preview_screenshot_add_cd_admin.png">
 <img src="public/images/preview_screenshot_edit_cd_admin.png">
-<br>
 <h3>Funktionen</h3>
 <ul>
     <li>Alle CDs anzeigen</li>
@@ -23,7 +22,7 @@
 </ul>
 <h3>Setup</h3>
 <p>In xampp htdocs ein Ordner Namens "cd" erstellen und gezippten Code dort entpacken.</p>
-<p>Datenbank kann aus Order "db" der Datei "music.sql" in mySQL importiert werden.</p>
+<p>Datenbank kann aus Order "db" der Datei "music.sql" in MySQL importiert werden.</p>
     <h4>Log in</h4>
     <h5>Benutzername = admin</h5>
     <h5>Passwort = admin</h5>

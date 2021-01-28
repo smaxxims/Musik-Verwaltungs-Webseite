@@ -63,12 +63,14 @@ class ControllerUser
         $notFind = 0;
         $find = 0;
         foreach ($cds as $cd) {
-            if (str_contains(strtolower($cd["interpret"]), strtolower($inputSearchCD)) && $inputSearchCD != "") {
+            //php 8 with str_contains
+            //if (str_contains(strtolower($cd["interpret"]), strtolower($inputSearchCD)) && $inputSearchCD != "") {
+            if (substr_compare(strtolower($cd["interpret"]), strtolower($inputSearchCD), 0) == 0 && $inputSearchCD != "") {
                 $find = 1;
                 include "layouts/_searched_cds.php";
             } else if ($inputSearchCD == "") {
                 include "layouts/_searched_cds.php";
-            } else if (!str_contains(strtolower($cd["interpret"]), strtolower($inputSearchCD))) {
+            } else if (!substr_compare(strtolower($cd["interpret"]), strtolower($inputSearchCD), 0) == 0) {
                 $notFind = 1;
             }
         }

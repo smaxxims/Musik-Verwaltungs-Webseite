@@ -90,7 +90,7 @@ const getCdsByBtn = btn => {
                         data: formData,
                         dataType: "html",
                         error: function (e) {
-                            console.log(`Error: ${e}`);
+                            console.log(e);
                         },
                         success: function (res) {
                             if (res.includes('Keine Cds')) {

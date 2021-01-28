@@ -51,7 +51,7 @@ class MusicDB extends ConnectMySQL {
     public function saveCdinDB($interpret, $genre, $year, $image, $desc)
     {
         $conn = $this->connectToDB();
-        $sql = $conn->prepare("INSERT INTO `$this->DB_DATABASE`.`$this->TABLE_CDS` (`interpret`, `genre`, `year`, `image`, `desc`) VALUES ('$interpret', '$genre', $year, '$image', '$desc') LIMIT 1000");
+        $sql = $conn->prepare("INSERT INTO `$this->DB_DATABASE`.`$this->TABLE_CDS` (`interpret`, `genre`, `year`, `image`, `desc`) VALUES ('$interpret', '$genre', '$year', '$image', '$desc')");
         $sql->execute();
         $result = $sql;
 
@@ -79,7 +79,7 @@ class MusicDB extends ConnectMySQL {
     public function updateImage($id, $image)
     {
         $conn = $this->connectToDB();
-        $sql = $conn->prepare("UPDATE `$this->DB_DATABASE`.`$this->TABLE_CDS` SET `image`='$image' WHERE  `id`=$id LIMIT 1000");
+        $sql = $conn->prepare("UPDATE `$this->DB_DATABASE`.`$this->TABLE_CDS` SET `image`='$image' WHERE  `id`=$id");
         $sql->execute();
         $result = $sql;
 
@@ -109,7 +109,7 @@ class MusicDB extends ConnectMySQL {
     public function updateCD($id, $interpret, $genre, $year, $desc)
     {
         $conn = $this->connectToDB();
-        $sql = $conn->prepare("UPDATE `$this->DB_DATABASE`.`$this->TABLE_CDS` SET `interpret`='$interpret', `genre`='$genre', `year`=$year, `desc`='$desc' WHERE  `id`=$id LIMIT 1000");
+        $sql = $conn->prepare("UPDATE `$this->DB_DATABASE`.`$this->TABLE_CDS` SET `interpret`='$interpret', `genre`='$genre', `year`=$year, `desc`='$desc' WHERE  `id`=$id");
         $sql->execute();
         $result = $sql;
 
@@ -124,7 +124,7 @@ class MusicDB extends ConnectMySQL {
     public function deleteCD($id)
     {
         $conn = $this->connectToDB();
-        $sql = $conn->prepare("DELETE FROM `$this->DB_DATABASE`.`$this->TABLE_CDS` WHERE `id`=$id LIMIT 1000");
+        $sql = $conn->prepare("DELETE FROM `$this->DB_DATABASE`.`$this->TABLE_CDS` WHERE `id`=$id");
         $sql->execute();
         $result = $sql;
 
