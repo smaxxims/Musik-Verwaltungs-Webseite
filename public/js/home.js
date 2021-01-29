@@ -8,15 +8,28 @@ const init = () => {
 
 // open and close menu and main-content 
 $('.hamburger-menu').click(function () {
-    $('.nav-wrapper').toggleClass('change')
+
+    if ($('.nav-wrapper').toggleClass('change')) {
+        $('.bottom-nav').show()
+    } else {
+        $('.bottom-nav').hide()
+    }
+
     $('.nav-wrapper').hasClass('change') ? $('.footer-div').hide() : $('.footer-div').show()
     if ($('.bottom-nav').text() == '') {
+        $('.bottom-nav').show()
         getHomeContent()
     }
 })
 
 $('.banner-btn').click(function () {
-    $('.nav-wrapper').toggleClass('change')
+
+    if ($('.nav-wrapper').toggleClass('change')) {
+        $('.bottom-nav').show()
+    } else {
+        $('.bottom-nav').hide()
+    }
+
     $('.nav-wrapper').hasClass('change') ? $('.footer-div').hide() : $('.footer-div').show()
     if ($('.bottom-nav').text() == '') {
         getHomeContent()
@@ -100,7 +113,7 @@ const getCdsByBtn = btn => {
                                 $('.cds').html(res)
                             }
                             getCdByIdByBtn('.musik-cd-btn')
-                            if($(".cd-search-field").val() == '') {
+                            if ($(".cd-search-field").val() == '') {
                                 $('.load-more-cds').show()
                             }
                         }

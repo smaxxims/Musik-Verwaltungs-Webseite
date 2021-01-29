@@ -304,11 +304,21 @@ p,li,b {
 }
 
 .bottom-nav li {
-    list-style: inside circle;
     font-family: 'Roboto Mono', monospace;
     font-size: 16px;
 }
+.bottom-nav ul {
+    list-style: none;
+}
 
+.bottom-nav ul li::before {
+    content: "\2022";
+    color: #16c3cf;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: 0em;
+}
 .change .bottom-nav {
     bottom: 0;
 }
@@ -622,16 +632,56 @@ audio::-webkit-media-controls-panel {
     }
 
     .top-nav {
-        height: 35vh;
+        height: 20vh;
         top   : -35vh;
     }
 
     .bottom-nav {
-        height: 65vh;
-        bottom: -65vh;
+        height: 80vh;
+        bottom: -77vh;
+        padding-left: 84px;
+        padding-right: 25px;
+        display: none;
     }
 
     .nav-list {
         width: 50%;
+    }
+    .nav-link {
+        margin: 0;
+        padding: 0px 10px
+    }
+    .cd-title {
+        display: none;
+    }
+
+    .hamburger-menu {
+        width          : 35px;
+        height         : 30px;
+        position       : fixed;
+        top            : 20px;
+        right          : 25px;
+        display        : flex;
+        flex-direction : column;
+        justify-content: space-between;
+        cursor         : pointer;
+        z-index        : 100;
+    }
+
+    .logo {
+        width: 70px;
+        height: 70px;
+        left: 20px;
+        top: 0px;
+    }
+
+    img.pimage {
+        max-width: 200px;
+        max-height: 200px;
+        border-radius: 50%;
+    }
+    .row {
+        margin-right: -15px;
+        margin-left: -40px;
     }
 }

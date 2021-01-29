@@ -40,6 +40,7 @@
             <thead>
                 <tr>
                     <th>Titel</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>';
@@ -56,9 +57,8 @@
                         $check--;
                 ?>
                         <tr class="tr-hover">
-                            <td><?= $util->valStr($music[$titleIndex++]['filename']) ?></td>
+                            <td class="cd-title"><?= $util->valStr($music[$titleIndex++]['filename']) ?></td>
                             <td class="player-td">
-
                                 <audio controls="controls">
                                     <source src="../public/audio/<?= $util->valStr($row["id"]) ?>/<?= $util->valStr($music[$playerIndex++]["filename"]) ?>" type="audio/mpeg" />
                                     Your browser does not support the audio element.
