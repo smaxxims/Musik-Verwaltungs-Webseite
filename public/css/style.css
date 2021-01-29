@@ -531,7 +531,7 @@ audio::-webkit-media-controls-panel {
     }
 }
 
-@media(max-width: 900px) {
+@media(max-width: 1000px) {
     .banner-btn {
         width    : 300px;
         height   : 80px;
@@ -572,6 +572,13 @@ audio::-webkit-media-controls-panel {
         height   : 90px;
         font-size: 30px;
     }
+    a.pa {
+        height: 400px;
+    }
+    img.pimage {
+        width: 400px;
+        border-radius: 50%;
+    }
 
 }
 
@@ -588,6 +595,16 @@ audio::-webkit-media-controls-panel {
     .icon-link i {
         width : 70px;
         height: 70px;
+    }
+    .cd-desc {
+
+    }
+    a.pa {
+        height: 300px;
+    }
+    img.pimage {
+        width: 300px;
+        border-radius: 50%;
     }
 }
 
@@ -634,14 +651,18 @@ audio::-webkit-media-controls-panel {
     .top-nav {
         height: 20vh;
         top   : -35vh;
+        overflow: hidden;
     }
 
     .bottom-nav {
         height: 80vh;
         bottom: -77vh;
-        padding-left: 84px;
+        padding-left: 30px;
         padding-right: 25px;
         display: none;
+    }
+    .music-cds-div {
+        padding-left: 45px
     }
 
     .nav-list {
@@ -680,8 +701,5 @@ audio::-webkit-media-controls-panel {
         max-height: 200px;
         border-radius: 50%;
     }
-    .row {
-        margin-right: -15px;
-        margin-left: -40px;
-    }
+
 }

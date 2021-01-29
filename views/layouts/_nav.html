@@ -8,7 +8,7 @@
         <?php session_start();
         if(isset($_SESSION['user']) && $_SESSION['user'] == 'admin')
         :?>
-        <li><a href="/cd/views/admin/home" target="_blank" data-text="Admin Bereich" class="nav-link">Admin Bereich</a></li>
+        <li><a href="/cd/views/admin/home" target="_blank" data-text="Admin Bereich" class="nav-link">Admin</a></li>
         <?php else : ?>
         <li><a class="nav-link login-nav-btn" data-text="Login">Login</a></li>
 
