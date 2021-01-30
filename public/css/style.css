@@ -660,6 +660,7 @@ audio::-webkit-media-controls-panel {
         padding-left: 30px;
         padding-right: 25px;
         display: none;
+        padding-top: 110px;
     }
     .music-cds-div {
         padding-left: 45px
@@ -701,5 +702,11 @@ audio::-webkit-media-controls-panel {
         max-height: 200px;
         border-radius: 50%;
     }
+    a.pa {
+        height: 200px;
+    }
+/*    .banner-btn {
+        transform: rotateX(42deg) rotateZ(-21deg) rotateY(360deg);
+    }*/
 
 }

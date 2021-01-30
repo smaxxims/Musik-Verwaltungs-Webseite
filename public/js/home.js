@@ -78,6 +78,7 @@ const getCdsByBtn = btn => {
                 console.log(e);
             },
             success: function (res) {
+                $('.bottom-nav').animate({scrollTop: 0}, 'slow')
                 $('.bottom-nav').html(res)
                 $('.pimage').css('animation', '1s cubic-bezier(.79,.14,.15,.86) 0s 1 normal none running rotation')
 

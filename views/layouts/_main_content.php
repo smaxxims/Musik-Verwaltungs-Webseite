@@ -22,3 +22,11 @@
         <div class="bottom-nav scrollDesign"></div>
     </div>
 </div>
+
+<script>
+    const spinPlayBtn = () => {
+    document.querySelector(".banner-btn").style.transition = 'transform 5s'
+    document.querySelector(".banner-btn").style.transform = 'rotateX(42deg) rotateZ(-21deg) rotateY(360deg)'
+    }
+    setTimeout( spinPlayBtn, 1000)
+</script>
