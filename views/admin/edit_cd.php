@@ -37,7 +37,7 @@ include "../layouts/admin/_admin_footer.html";
             const reader = new FileReader()
 
             reader.onload = function (e) {
-                $("#imgPreview").attr('src', e.target.result).width(400)
+                $("#imgPreview").attr('src', e.target.result).width(300)
             }
             reader.readAsDataURL(input.files[0])
         }

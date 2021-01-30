@@ -27,7 +27,7 @@ if (password_verify($row["code"], $_SESSION['code'])) {
             if (input.files && input.files[0]) {
                 const reader = new FileReader()
                 reader.onload = function (e) {
-                    $("#imgPreview").attr('src', e.target.result).width(400)
+                    $("#imgPreview").attr('src', e.target.result).width(300)
                 }
                 reader.readAsDataURL(input.files[0])
             }

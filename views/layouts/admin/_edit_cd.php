@@ -21,7 +21,7 @@
                 <label>Neues Cover hochladen</label>
                 <input type="file" accept="image/png, image/jpeg" class="form-control btn btn-info input-upload" name="image" id="img">
                 <br>
-                <img src="#" id="imgPreview" alt="Vorschau-Bild">
+                <img src="#" id="imgPreview" class="imgPreview" alt="Vorschau-Bild">
             </div>
             <input type="button" name="submit" class="btn btn-success submit-image" value="Bild aktuallisieren"></input>
         </form>
@@ -43,9 +43,7 @@
             </div>
             <div class="form-group ">
                 <label>Beschreibung</label>
-                <textarea type="text" class="form-control" name="desc" cols="30" rows="10" placeholder="Beschreibung" required>
-               <?php echo $util->valStr($rowCD['desc'])?>
-                </textarea>
+                <textarea type="text" class="form-control" name="desc" cols="30" rows="10" placeholder="Beschreibung" required><?php echo $util->valStr(trim($rowCD['desc']))?></textarea>
             </div>
             <div class="form-group">
                 <label>Genre</label>
@@ -88,9 +86,7 @@
                                 $check--;
                         ?>
                                 <tr class="title-row">
-                                    <td class="titleName" name="title<?= $titleNameNum++; ?>" placeholder="Titel">
-                                        <?= $util->valStr($music[$titleIndex++]['filename']) ?>
-                                    </td>
+                                    <td class="titleName" name="title<?= $titleNameNum++; ?>" placeholder="Titel"><?= $util->valStr($music[$titleIndex++]['filename']) ?></td>
                                     <td class="player-td" style="width:30%">
                                         <audio controls="controls">
                                             <source src="../../public/audio/<?= $util->valStr($rowCD['id']) ?>/<?= $util->valStr($music[$playerIndex++]['filename']) ?>" type="audio/mpeg" />

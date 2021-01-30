@@ -75,10 +75,36 @@ img.cd-image {
     padding: 10px 15px;
     float: left;
 }
+
 .navbar-right {
     float: right;
 }
 
-@media (min-width: 400px) {
 
+@media (max-width: 450px) {
+    .phone-admin-table {
+        display: none;
+    }
+
+    img.imgPreview {
+        width: 100%;
+    }
+
+    img.cd-image {
+        width: 100%;
+    }
+    .player-td {
+        display: none;
+    }
+    .delete-one-title {
+        color: red;
+        cursor: pointer;
+        float: right;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .table-responsive > .table > tbody > tr > td, .table-responsive > .table > tbody > tr > th, .table-responsive > .table > tfoot > tr > td, .table-responsive > .table > tfoot > tr > th, .table-responsive > .table > thead > tr > td, .table-responsive > .table > thead > tr > th {
+        white-space: unset;
+    }
 }

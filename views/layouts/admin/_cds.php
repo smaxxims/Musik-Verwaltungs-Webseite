@@ -8,10 +8,10 @@
     <thead>
     <tr>
         <th>Interpret</th>
-        <th>Genre</th>
-        <th>Jahr</th>
-        <th>Cover</th>
-        <th>Titel</th>
+        <th class="phone-admin-table">Genre</th>
+        <th class="phone-admin-table">Jahr</th>
+        <th class="phone-admin-table">Cover</th>
+        <th class="phone-admin-table">Titel</th>
         <th>Bearbeiten</th>
         <th>Löschen</th>
     </tr>
@@ -24,9 +24,9 @@
     ?>
     <tr>
         <td><?= $util->valStr($row[1]) ?></td>
-        <td><?= $util->valStr($row[2]) ?></td>
-        <td><?= $util->valStr($row[3]) ?></td>
-        <td>
+        <td class="phone-admin-table"><?= $util->valStr($row[2]) ?></td>
+        <td class="phone-admin-table"><?= $util->valStr($row[3]) ?></td>
+        <td class="phone-admin-table">
             <?php if (empty($util->valStr($row[4]))) : ?>
             <img src="../../../public/images/noimage.jpg" class="cds-image">
             <?php else : ?>
@@ -36,7 +36,7 @@
 <?php
         $music = $titelOfCd->getFilesInDir("../../public/audio/".$util->valStr($row[0]));
 ?>
-        <td><?= count($music) ?></td>
+        <td class="phone-admin-table"><?= count($music) ?></td>
 
         <td><a href="/cd/views/admin/edit_cd?id=<?= $util->valStr($row[0]) ?>" class="btn btn-info">Bearbeiten</a></td>
         <td><a href="/cd/views/admin/delete_cd?id=<?= $util->valStr($row[0]) ?>&image=<?= $util->valStr($row[4]) ?>" onclick="return confirm('Sind Sie sicher?')" class="btn btn-danger">Löschen</a></td>
