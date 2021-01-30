@@ -285,7 +285,7 @@ label {
 
 .load-next-row {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
 }
 
 .bottom-nav h1,
@@ -491,7 +491,6 @@ audio::-webkit-media-controls-panel {
     border          : 3px solid #00BCD4;
 }
 
-
 @media(max-width: 1600px) {
     .icons {
         width: 80%;
@@ -499,9 +498,7 @@ audio::-webkit-media-controls-panel {
 }
 
 @media(max-width: 1200px) {
-    .top-nav {
-        background: #010101;
-    }
+
 
     .nav-list {
         justify-content: center;
@@ -539,13 +536,13 @@ audio::-webkit-media-controls-panel {
     }
 
     .top-nav {
-        height: 25vh;
+        height: 12vh;
         top   : -25vh;
     }
 
     .bottom-nav {
-        height: 75vh;
-        bottom: -75vh;
+        height: 88vh;
+        bottom: -88vh;
     }
 
     .nav-list {
@@ -583,6 +580,10 @@ audio::-webkit-media-controls-panel {
 }
 
 @media(max-width: 750px) {
+    .top-nav {
+        background: #010101;
+    }
+
     .nav-list {
         width: 60%;
     }
@@ -622,13 +623,13 @@ audio::-webkit-media-controls-panel {
     }
 
     .top-nav {
-        height: 30vh;
+        height: 12vh;
         top   : -30vh;
     }
 
     .bottom-nav {
-        height: 70vh;
-        bottom: -70vh;
+        height: 88vh;
+        bottom: -88vh;
     }
 
     .icon-link {
@@ -649,14 +650,14 @@ audio::-webkit-media-controls-panel {
     }
 
     .top-nav {
-        height: 20vh;
+        height: 12vh;
         top   : -35vh;
         overflow: hidden;
     }
 
     .bottom-nav {
-        height: 80vh;
-        bottom: -77vh;
+        height: 88vh;
+        bottom: -88vh;
         padding-left: 30px;
         padding-right: 25px;
         display: none;

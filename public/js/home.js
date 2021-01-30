@@ -24,27 +24,6 @@ $('.hamburger-menu').click(function () {
 
 $('.banner-btn').click(function () {
 
-    var elem = document.documentElement;
-    function openFullscreen() {
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        } else if (elem.webkitRequestFullscreen) { /* Safari */
-            elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE11 */
-            elem.msRequestFullscreen();
-        }
-    }
-    openFullscreen()
-    function closeFullscreen() {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        } else if (document.webkitExitFullscreen) { /* Safari */
-            document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) { /* IE11 */
-            document.msExitFullscreen();
-        }
-    }
-
     if ($('.nav-wrapper').toggleClass('change')) {
         $('.bottom-nav').show()
     } else {
@@ -256,11 +235,8 @@ const postLoginByBtn = btn => {
             },
             success: function (res) {
                 if (res.includes("Eingeloggt")) {
-                    const newTab = () => window.open('admin/home', '_blank')
+                    const newTab = () => window.location.replace("admin/home");
                     setTimeout(newTab, 3000)
-
-                    const reloadPage = () => location.reload()
-                    setTimeout(reloadPage, 3000)
                 }
                 $('.msb-box').hide().html(res).fadeIn('slow')
             },

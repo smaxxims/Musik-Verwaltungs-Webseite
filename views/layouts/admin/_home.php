@@ -1,4 +1,4 @@
-<h1>Willkommen im Adminbereich!</h1>
+<h1>Willkommen im Adminbereich <?php if (isset($_SESSION["user"])) echo $_SESSION["user"]; ?>!</h1>
 <h2>Funktionen</h2>
 <ul>
     <li>Alle CDs anzeigen die in DB gespeichert sind</li>
