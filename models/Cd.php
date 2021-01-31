@@ -8,6 +8,8 @@ class Cd
     private $image;
     private $desc;
 
+    private $allowType = 'image/png';
+
     public function __construct($interpret = "", $genre = "", $year = 0, $image = "", $desc = "")
     {
         $this->interpret = $interpret;
@@ -18,9 +20,11 @@ class Cd
     }
 
     public function uploadImage($imageTmpName, $image) {
+
         if (!empty($image)) {
             $pathToSave = "../../public/images/" . $image;
             if (move_uploaded_file($imageTmpName, $pathToSave)) {
+
             } else {
                 echo "Upload fehlgeschlagen.";
             }

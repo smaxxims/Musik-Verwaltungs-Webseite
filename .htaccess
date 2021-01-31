@@ -17,11 +17,10 @@ ErrorDocument 403 http://localhost/cd
 ErrorDocument 404 http://localhost/cd
 
 # rename php session id
-php_value session.name mysession
+#php_value session.name mysession
 
 #
 Header set X-Powered-By "smaxxims"
-Header set Server "smaxxims"
 
 # Aktiviert XSS Präventions-/Filter-Tools
 # Optional: mode=block

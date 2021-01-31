@@ -21,7 +21,10 @@ if (password_verify($row["code"], $util->valStr($_SESSION['code']))) {
 
     } else if (!$util->valStr($_POST["interpret"]) || !$util->valStr($_POST["genre"]) || !$util->valStr($_POST["year"]) || !$util->valStr($_POST["desc"])) {
         echo "<div class='alert alert-danger' role='alert'>Bitte alle Felder ausfüllen.</div>";
-    } else {
+
+    } else if ($util->valStr($_FILES["image"]["type"]) == "image/jpeg" ||
+        $util->valStr($_FILES["image"]["type"]) == "image/png") {
+
         $cd = new Cd($util->valStr($_POST["interpret"]), $util->valStr($_POST["genre"]), $util->valStr($_POST["year"]), $util->valStr($_FILES["image"]["name"]), $util->valStr($_POST["desc"]));
         $cd->uploadImage($util->valStr(($_FILES['image']['tmp_name'])), $cd->getImage());
 
@@ -29,6 +32,8 @@ if (password_verify($row["code"], $util->valStr($_SESSION['code']))) {
         $ajaxDB->saveCdinDB($cd->getInterpret(), $cd->getGenre(), $cd->getYear(), $cd->getImage(), $cd->getDesc());
 
         echo "<div class='alert alert-success' role='alert'>CD gespeichert.</div>";
+    } else {
+        echo "<div class='alert alert-danger' role='alert'>" . $util->valStr($_FILES["image"]["name"]) . " ist eine ungültige Datei</div>";
     }
 
 } else {
