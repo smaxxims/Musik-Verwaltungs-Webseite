@@ -16,4 +16,5 @@ Options -Indexes
 ErrorDocument 403 http://localhost/cd
 ErrorDocument 404 http://localhost/cd
 
-#php_value session.use_strict_mode=1 // in ini is set to 1
+# rename php session id
+php_value session.name mysession

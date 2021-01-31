@@ -62,38 +62,18 @@ const getCdsByBtn = btn => {
                 $('.pimage').css('animation', '1s cubic-bezier(.79,.14,.15,.86) 0s 1 normal none running rotation')
 
                 // scroll down
-                $('.bottom-nav')
-
-
-                // on scroll, let the interval function know the user has scrolled
-                // mobile option
-                var position = $('.bottom-nav').scrollTop();
-                $('.bottom-nav').scroll(function () {
-                    var scroll = $('.bottom-nav').scrollTop();
-                    if (scroll > position) {
-                        console.log('Scrolling Down Scripts');
-                        $('.top-nav').fadeOut('slow')
-                        $('.hamburger-menu').fadeOut('slow')
-                        $('.bottom-nav').css('height','100vh')
-                    } else {
-                        console.log('Scrolling Up Scripts');
+                // desktop option
+                $(window).bind('mousewheel', function (event) {
+                    if (event.originalEvent.wheelDelta >= 0) {
                         $('.top-nav').fadeIn(1000)
                         $('.hamburger-menu').fadeIn(1000)
-                        $('.bottom-nav').css('height','88vh')
-                    }
-                    position = scroll;
-                });
-
-                // desktop option
-                /*$(window).bind('mousewheel', function (event) {
-                    if (event.originalEvent.wheelDelta >= 0) {
-                        console.log('Scroll up');
+                        $('.bottom-nav').css('height', '88vh')
                     } else {
-                        console.log('Scroll down');
-
+                        $('.top-nav').fadeOut('slow')
+                        $('.hamburger-menu').fadeOut('slow')
+                        $('.bottom-nav').css('height', '100vh')
                     }
-                });*/
-
+                });
 
                 // click event to show details of one cd
                 getCdByIdByBtn('.musik-cd-btn')
