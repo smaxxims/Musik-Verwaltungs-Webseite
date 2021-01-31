@@ -18,3 +18,18 @@ ErrorDocument 404 http://localhost/cd
 
 # rename php session id
 php_value session.name mysession
+
+#
+Header set X-Powered-By "smaxxims"
+Header set Server "smaxxims"
+
+# Aktiviert XSS Präventions-/Filter-Tools
+# Optional: mode=block
+Header set X-XSS-Protection "1; mode=block"
+
+# Cookies nur über SSL and kein Javascript Zugriff
+# Optional: Expires, Max-Age, Path, Domain
+Header always edit Set-Cookie (.*) "$1; HttpOnly; Secure"
+
+# Verhindert mime based attacks, nur IE und Chrome
+Header set X-Content-Type-Options "nosniff"
