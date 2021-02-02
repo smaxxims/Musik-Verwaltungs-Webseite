@@ -36,6 +36,30 @@ $('.banner-btn').click(function () {
     }
 })
 
+// on scroll down in bottom-nav hide top-nav
+function scrollFun() {
+    if (document.querySelector('.bottom-nav').scrollTop > 10) {
+        $('.top-nav').hide()
+        $('.logo').hide()
+        $('.hamburger-menu').hide()
+    } else {
+        $('.top-nav').fadeIn('slow')
+        $('.logo').fadeIn('slow')
+        $('.hamburger-menu').fadeIn('slow')
+    }
+}
+
+const phoneResponsive = responsiveSize => {
+    if (responsiveSize.matches) {
+        document.querySelector('.bottom-nav').onscroll = function() {
+            scrollFun()
+        }
+    }
+}
+const max450px = window.matchMedia("(max-width: 450px)")
+phoneResponsive(max450px)
+
+
 // active nav link color on use
 $('.nav-link').click(function () {
     $("li a:first-child").removeClass('open');
@@ -63,7 +87,7 @@ const getCdsByBtn = btn => {
 
                 // scroll down
                 // desktop option
-                $(window).bind('mousewheel', function (event) {
+                /*$(window).bind('mousewheel', function (event) {
                     if (event.originalEvent.wheelDelta >= 0) {
                         $('.top-nav').fadeIn(1000)
                         $('.hamburger-menu').fadeIn(1000)
@@ -73,7 +97,7 @@ const getCdsByBtn = btn => {
                         $('.hamburger-menu').fadeOut('slow')
                         $('.bottom-nav').css('height', '100vh')
                     }
-                });
+                });*/
 
                 // click event to show details of one cd
                 getCdByIdByBtn('.musik-cd-btn')
@@ -194,12 +218,10 @@ const getContactBy = btn => {
                 console.log(error);
             },
             success: function (res) {
-
                 $('.bottom-nav').html(res)
                 if ($('textarea#ta').length) {
                     CKEDITOR.replace('ta')
                 }
-
             }
         })
     })
@@ -221,7 +243,6 @@ const getLoginByBtn = btn => {
                 console.log(e);
             },
             success: function (res) {
-                //var json = JSON.parse(data)
                 $('.bottom-nav').html(res)
                 postLoginByBtn('.submit-login-btn')
             }
@@ -271,13 +292,9 @@ const getCdByIdByBtn = btn => {
             error: function (e) {
                 console.log(`Error: ${e}`);
             },
-
             success: function (response) {
                 $('.bottom-nav').html(response)
-
-                //$('.bottom-nav').css('position', 'absolute')
             }
-
         });
         $('.bottom-nav').animate({scrollTop: 0}, 'slow')
     })

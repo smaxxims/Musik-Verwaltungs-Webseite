@@ -1,5 +1,4 @@
 <div class="music-cds-div">
-    <h1 class="page-title">Musik CD´s</h1>
     <br>
     <div class="row">
         <div class="col-lg-8 search-result">

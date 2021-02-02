@@ -25,7 +25,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) :
                 session_regenerate_id();
                 $_SESSION['user'] = $user->getUsername();
 
-
                 $secCode = $util->makeRandomNumsInStringOfNum(7);
                 $ajaxDB->saveCodeForLoginUser($secCode, $user->getUsername());
                 $hashedCode = password_hash($secCode, PASSWORD_DEFAULT);

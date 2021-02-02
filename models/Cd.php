@@ -19,10 +19,30 @@ class Cd
         $this->desc = $desc;
     }
 
-    public function uploadImage($imageTmpName, $image) {
+    public function uploadImage($imageTmpName, $image)
+    {
 
         if (!empty($image)) {
             $pathToSave = "../../public/images/" . $image;
+
+            // filename and extension
+            $extension = strstr($image, ".");
+
+            $filename = substr($image,0, strpos($image, "."));
+
+
+            //Pfad zum Upload
+            //$new_path = $upload_folder.$filename.'.'.$extension;
+
+            //Neuer Dateiname falls die Datei bereits existiert
+            if (file_exists($pathToSave)) { //Falls Datei existiert, hänge eine Zahl an den Dateinamen
+                $id = 1;
+                do {
+                    $pathToSave =  "../../public/images/"  . $filename . '_' . $id . $extension;
+                    $id++;
+                } while (file_exists($pathToSave));
+            }
+
             if (move_uploaded_file($imageTmpName, $pathToSave)) {
 
             } else {
@@ -32,24 +52,29 @@ class Cd
             return $image = "noimage.jpg";
         }
     }
-    
-    public function getDesc(){
+
+    public function getDesc()
+    {
         return $this->desc;
     }
 
-    public function getInterpret(){
+    public function getInterpret()
+    {
         return $this->interpret;
     }
 
-    public function getGenre(){
+    public function getGenre()
+    {
         return $this->genre;
     }
 
-    public function getYear(){
+    public function getYear()
+    {
         return $this->year;
     }
 
-    public function getImage(){
+    public function getImage()
+    {
         return $this->image;
     }
 
