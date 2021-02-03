@@ -36,6 +36,8 @@ $('.banner-btn').click(function () {
     }
 })
 
+
+
 // on scroll down in bottom-nav hide top-nav
 function scrollFun() {
     if (document.querySelector('.bottom-nav').scrollTop > 10) {
@@ -47,17 +49,34 @@ function scrollFun() {
         $('.logo').fadeIn('slow')
         $('.hamburger-menu').fadeIn('slow')
     }
+    if (document.querySelector('.bottom-nav').scrollTop > 800) {
+        // show top arrow
+        $('.scroll-top-arrow').fadeIn('slow')
+
+        // scroll to top
+        $('.scroll-top-arrow').click(function () {
+            $('.bottom-nav').animate({
+                scrollTop: parseInt($("body").offset().top)
+            }, 1000);
+            return
+        })
+
+    } else {
+        $('.scroll-top-arrow').fadeOut('slow')
+    }
 }
 
-const phoneResponsive = responsiveSize => {
-    if (responsiveSize.matches) {
+const phoneStyle = size => {
+    if (size.matches) {
         document.querySelector('.bottom-nav').onscroll = function() {
             scrollFun()
         }
     }
 }
 const max450px = window.matchMedia("(max-width: 450px)")
-phoneResponsive(max450px)
+
+phoneStyle(max450px)
+
 
 
 // active nav link color on use
