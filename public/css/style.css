@@ -675,6 +675,7 @@ audio::-webkit-media-controls-panel {
         padding-right: 25px;
         display: none;
         padding-top: 110px;
+        scroll-behavior: smooth;
     }
 
     .music-cds-div {
