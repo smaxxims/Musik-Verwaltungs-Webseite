@@ -40,7 +40,7 @@ echo $Parsedown->text('Hello _Parsedown_!');
 -->
 
         <div class="btn-wrapper">
-            <button class="banner-btn">Play</button>
+            <button class="banner-btn">App Starten</button>
         </div>
     </div>
 

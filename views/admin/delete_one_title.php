@@ -2,7 +2,7 @@
 include "../../utils/Util.php";
 session_start();
 $util = new Util();
-if (isset($_SESSION['user']) && $util->valStr($_SESSION['user']) == 'admin') :
+if (isset($_SESSION['user'])) :
 
     if (isset($_POST["title"]) && isset($_POST["id"])) {
 

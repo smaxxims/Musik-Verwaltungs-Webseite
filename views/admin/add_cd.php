@@ -4,8 +4,8 @@ include "../../controller/db_controller/MusicDB.php";
 include "../../models/Cd.php";
 include "../../utils/Util.php";
 
-if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
-    header("Location: ../home.php");
+if (!isset($_SESSION['user'])) {
+    header("Location: ../home");
 }
 $util = new Util();
 $db = new MusicDB();

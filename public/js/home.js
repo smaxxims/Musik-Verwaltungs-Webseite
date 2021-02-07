@@ -245,6 +245,56 @@ const getContactBy = btn => {
     })
 }
 
+// get register
+const getRegisterByBtn = btn => {
+
+    $(btn).mousedown(function (event) {
+        console.log('click')
+
+        $.ajax({
+            type: "POST",
+            url: "register",
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            cache: false,
+
+            error: function (e) {
+                console.log(e);
+            },
+            success: function (res) {
+                $('.bottom-nav').html(res)
+                postRegisterByBtn('.submit-register-btn')
+            }
+        })
+    })
+}
+
+// post register
+const postRegisterByBtn = btn => {
+    $(btn).mousedown(function (event) {
+
+        let formData = {
+            'username': $('input[name=username]').val(),
+            'email': $('input[name=email]').val(),
+            'password': $('input[name=password]').val(),
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "register",
+            data: formData,
+            cache: false,
+
+            error: function (e) {
+                console.log(e);
+            },
+            success: function (res) {
+                $('.msb-box').hide().html(res).fadeIn('slow')
+            },
+        })
+    })
+}
+
 // get Login
 const getLoginByBtn = btn => {
 
@@ -263,6 +313,7 @@ const getLoginByBtn = btn => {
             success: function (res) {
                 $('.bottom-nav').html(res)
                 postLoginByBtn('.submit-login-btn')
+                getRegisterByBtn('.to-register-btn')
             }
         })
     })

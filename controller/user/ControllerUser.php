@@ -37,10 +37,10 @@ class ControllerUser
         }
     }
 
-    public function showFirstCDs() : array
+    public function showFirstCDs($userName = 'admin_cds') : array
     {
         $musicDB = new MusicDB();
-        $cds = $musicDB->getCds();
+        $cds = $musicDB->getCds($userName);
         return $cds;
     }
 
@@ -50,7 +50,7 @@ class ControllerUser
         if ($inputSearchCD == "") {
             $cds = $musicDB->getCds();
         } else {
-            $cds = $musicDB->getCds(0, 20);
+            $cds = $musicDB->getCds($userName = 'admin_cds' ,0, 20);
         }
         return $cds;
     }
@@ -80,10 +80,10 @@ class ControllerUser
         }
     }
 
-    public function getCdData($cdId)
+    public function getCdData($userName = 'admin_cds', $cdId)
     {
         $musicDB = new MusicDB();
-        return $row = $musicDB->getCdbyID($cdId);
+        return $row = $musicDB->getCdbyID($userName, $cdId);
 
     }
 

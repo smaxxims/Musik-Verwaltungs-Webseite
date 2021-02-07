@@ -6,8 +6,8 @@ include "../../controller/admin/ControllerAdmin.php";
 include "../../utils/Util.php";
 
 
-if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
-    header("Location: ../home.php");
+if (!isset($_SESSION['user'])) {
+    header("Location: ../home");
 }
 $util = new Util();
 
@@ -16,7 +16,7 @@ if (isset($_GET['id'])) :
 
 // get cd data and image by id from db
     $ajaxDB = new MusicDB();
-    $rowCD = $ajaxDB->getCdbyID($id);
+    $rowCD = $ajaxDB->getCdbyID($util->valStr($_SESSION["user"]), $id);
 
 // get audio from dir
     $getTitles = new ControllerAdmin();

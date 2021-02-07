@@ -2,8 +2,8 @@
 include "../layouts/admin/_admin_header.html";
 include "../../controller/db_controller/MusicDB.php";
 
-if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') :
-    header("Location: ../home.php");
+if (!isset($_SESSION['user'])) :
+    header("Location: ../home");
 endif;
 
 $db = new MusicDB();

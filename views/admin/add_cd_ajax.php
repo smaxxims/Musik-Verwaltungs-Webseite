@@ -4,8 +4,8 @@ include "../../controller/db_controller/MusicDB.php";
 include "../../models/Cd.php";
 include "../../utils/Util.php";
 
-if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
-    header("Location: ../home.php");
+if (!isset($_SESSION['user'])) {
+    header("Location: ../home");
 }
 $util = new Util();
 $db = new MusicDB();
@@ -42,7 +42,7 @@ if (password_verify($row["code"], $util->valStr($_SESSION['code']))) {
                     $cd->uploadImage($util->valStr(($_FILES['image']['tmp_name'])), $cd->getImage());
 
                     $ajaxDB = new MusicDB();
-                    $ajaxDB->saveCdinDB($cd->getInterpret(), $cd->getGenre(), $cd->getYear(), $cd->getImage(), $cd->getDesc());
+                    $ajaxDB->saveCdinDB($util->valStr($_SESSION["user"]), $cd->getInterpret(), $cd->getGenre(), $cd->getYear(), $cd->getImage(), $cd->getDesc());
                 }
             }
         }

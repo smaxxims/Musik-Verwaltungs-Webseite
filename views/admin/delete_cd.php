@@ -7,16 +7,16 @@ session_start();
 
 $util = new Util();
 
-if (isset($_SESSION['user']) && $util->valStr($_SESSION['user']) == 'admin') :
+if (isset($_SESSION['user'])) :
 
     $id = $util->valStr($_GET['id']);
     $image = $util->valStr($_GET['image']);
 
     $ajaxDB = new MusicDB();
-    $ajaxDB->deleteCD($id);
+    $ajaxDB->deleteCD($util->valStr($_SESSION['user']), $id);
 
     $ajaxDB = new MusicDB();
-    $row = $ajaxDB->getCdbyID($id);
+    $row = $ajaxDB->getCdbyID($util->valStr($_SESSION['user']), $id);
 
     // delete image
     if ($image !== "noimage.jpg") :
