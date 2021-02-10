@@ -44,13 +44,13 @@ class ControllerUser
         return $cds;
     }
 
-    public function showSearchedCD($inputSearchCD) : array {
+    public function showSearchedCD($userName, $inputSearchCD) : array {
         $musicDB = new MusicDB();
 
         if ($inputSearchCD == "") {
-            $cds = $musicDB->getCds();
+            $cds = $musicDB->getCds($userName);
         } else {
-            $cds = $musicDB->getCds($userName = 'admin_cds' ,0, 20);
+            $cds = $musicDB->getCds($userName,0, 20);
         }
         return $cds;
     }

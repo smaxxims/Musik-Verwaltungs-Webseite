@@ -23,8 +23,20 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emai
             if (strlen($user->getPassword()) < 7) :
                 echo "<div class='alert alert-danger' role='alert'>Passwort hat weniger als 8 Zeichen.</div>";
             else :
+                $secCode = $util->makeRandomNumsInStringOfNum(7);
                 $hashedPass = password_hash($user->getPassword(), PASSWORD_DEFAULT);
                 $ajaxDB->saveNewUser($user->getUsername(), $user->getEmail(), $hashedPass);
+                $ajaxDB->saveCodeForLoginUser($secCode, $user->getUsername());
+
+                // email
+                /*$empfaenger = "$user->getEmail()";
+                $betreff = "Bestätigungs-Code";
+                $from = "From: smaxxims <smaxxims@gmail.com>\r\n";
+                $from .= "Content-Type: text/html\r\n";
+                $text = "<b>Code: </b> $secCode";
+
+                mail($empfaenger, $betreff, $text, $from);*/
+
                 echo "<div class='alert alert-success' role='alert'>Angemeldet, jetzt können sie sich einloggen.</div>";
 
                 $ajaxDB->createNewTableCds($user->getUsername());

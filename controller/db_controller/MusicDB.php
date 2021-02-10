@@ -48,10 +48,10 @@ class MusicDB extends ConnectMySQL
         }
     }
 
-    public function saveNewUser($userName, $email, $pass, $admin = 0)
+    public function saveNewUser($userName, $email, $pass, $admin = 0, $active = 0)
     {
         $conn = $this->connectToDB();
-        $sql = $conn->prepare("INSERT INTO `$this->DB_DATABASE`.`$this->TABLE_USER` (`name`, `password`, `admin` ,`email`) VALUES ('$userName', '$pass', '$admin' ,'$email')");
+        $sql = $conn->prepare("INSERT INTO `$this->DB_DATABASE`.`$this->TABLE_USER` (`name`, `password`, `admin` ,`email`,`active`) VALUES ('$userName', '$pass', '$admin' ,'$email', '$active')");
         $sql->execute();
         $result = $sql;
 

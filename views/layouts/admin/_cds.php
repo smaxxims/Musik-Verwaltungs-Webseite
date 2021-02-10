@@ -3,17 +3,17 @@
 <a href="/cd/views/admin/add_cd" class="btn btn-primary">Neue CD anlegen</a>
 <br><br>
 
-<table class="table table-striped alignmiddle">
+<table class="table table-striped alignmiddle tablesorter">
 
     <thead>
     <tr>
         <th>Interpret</th>
         <th class="phone-admin-table">Genre</th>
         <th class="phone-admin-table">Jahr</th>
-        <th class="phone-admin-table">Cover</th>
+        <th data-sorter="false" class="phone-admin-table">Cover</th>
         <th class="phone-admin-table">Titel</th>
-        <th>Bearbeiten</th>
-        <th>Löschen</th>
+        <th data-sorter="false">Bearbeiten</th>
+        <th data-sorter="false">Löschen</th>
     </tr>
     </thead>
 
@@ -49,3 +49,11 @@
         ?>
     </tbody>
 </table>
+
+<script>
+    $(".table").tablesorter({
+        theme: 'blue',
+        // sort on the first column and second column in ascending order
+        sortList: [[0, 0], [1, 0]]
+    });
+</script>

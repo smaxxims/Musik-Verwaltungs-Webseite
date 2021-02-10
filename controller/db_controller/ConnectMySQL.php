@@ -3,8 +3,8 @@ class ConnectMySQL {
 
     protected $DB_SERVER = 'localhost';
     protected $DB_DATABASE = 'music';
-    protected $DB_USERNAME = 'root';
-    protected $DB_PASSWORD = '';
+    protected $DB_USERNAME = 'user1';
+    protected $DB_PASSWORD = 'Rn$9sd44';
 
     protected function connectToDB()
     {
