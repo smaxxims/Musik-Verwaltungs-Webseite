@@ -7,7 +7,7 @@
     <thead>
     <tr>
         <th class="th-interpret">Interpret <i class="glyp-interpret glyphicon glyphicon-sort-by-alphabet-alt"></i></th>
-        <th class="th-genre phone-admin-table">Genre <i class="glyp-genre glyphicon glyphicon-sort-by-alphabet"></i></th>
+        <th class="th-genre phone-admin-table">Genre <i class="glyp-genre glyphicon glyphicon-sort-by-alphabet-alt"></i></th>
         <th class="th-year phone-admin-table">Jahr <i class="glyp-year glyphicon glyphicon-sort-by-order"></i></th>
         <th data-sorter="false" class="phone-admin-table">Cover</th>
         <th class="th-title phone-admin-table">Titel <i class="glyp-title glyphicon glyphicon-sort-by-order"></i></th>
