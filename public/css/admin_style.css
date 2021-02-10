@@ -13,6 +13,10 @@ table.alignmiddle td {
     font-size: 16px;
 }
 
+th {
+    min-width: 70px;
+}
+
 .title-length {
     display: block;
 }
@@ -79,6 +83,10 @@ img.cd-image {
 .navbar-right {
     float: right;
     padding-top: 4px;
+}
+
+.glyphicon {
+    color: #00ccff;
 }
 
 
